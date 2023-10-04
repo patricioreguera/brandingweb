@@ -1,6 +1,94 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import {
+	Navbar,
+	NavbarBrand,
+	NavbarContent,
+	NavbarItem,
+	Button,
+	NavbarMenuToggle,
+	NavbarMenu,
+	NavbarMenuItem,
+} from "@nextui-org/react";
+import Link from "next/link";
+
+export default function App() {
+	const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+	const menuItems = [
+		{
+			title: "Home",
+			url: "/",
+		},
+		{
+			title: "Projects",
+			url: "/projects",
+		},
+		{
+			title: "Contact",
+			url: "/contact",
+		},
+	];
+
+	return (
+		<Navbar /* onMenuOpenChange={() => setIsMenuOpen(!isMenuOpen)} */>
+			<NavbarContent>
+				<NavbarMenuToggle
+					aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+					className="sm:hidden"
+				/>
+				<NavbarBrand>
+					<Link href="/">
+						<h1>
+							BRANDING<span className="font-bold text-inherit">WEB</span>
+						</h1>
+					</Link>
+				</NavbarBrand>
+			</NavbarContent>
+
+			<NavbarContent className="hidden sm:flex gap-4" justify="center">
+				<NavbarItem>
+					<Link color="foreground" href="#">
+						Products
+					</Link>
+				</NavbarItem>
+				<NavbarItem isActive>
+					<Link href="#" aria-current="page">
+						Contact
+					</Link>
+				</NavbarItem>
+			</NavbarContent>
+			<NavbarContent justify="end">
+				<NavbarItem>
+					<Button as={Link} color="secondary" href="/projects" variant="ghost">
+						View Projects
+					</Button>
+				</NavbarItem>
+			</NavbarContent>
+			<NavbarMenu>
+				{menuItems.map((item, index) => (
+					<NavbarMenuItem key={`${item}-${index}`}>
+						<Link
+							color={
+								index === 2
+									? "primary"
+									: index === menuItems.length - 1
+									? "danger"
+									: "foreground"
+							}
+							className="w-full"
+							href={item.url}
+						>
+							{item.title}
+						</Link>
+					</NavbarMenuItem>
+				))}
+			</NavbarMenu>
+		</Navbar>
+	);
+}
+
+/* import {
 	Navbar,
 	NavbarBrand,
 	NavbarContent,
@@ -16,8 +104,11 @@ export default function Menu() {
 	return (
 		<Navbar isBordered isBlurred={true}>
 			<NavbarBrand>
-				<h1>BRANDING</h1>
-				<p className="font-bold text-inherit">WEB</p>
+				<Link href="/">
+					<h1>
+						BRANDING<span className="font-bold text-inherit">WEB</span>
+					</h1>
+				</Link>
 			</NavbarBrand>
 			<NavbarContent className="hidden sm:flex gap-4" justify="center">
 				<NavbarItem isActive={pathname === "/"}>
@@ -50,11 +141,20 @@ export default function Menu() {
 			</NavbarContent>
 			<NavbarContent justify="end">
 				<NavbarItem>
-					<Button as={Link} color="secondary" href="/admin" variant="flat">
+					<Link
+						className={pathname === "/admin" ? "text-red-600" : "text-white"}
+						href="/admin"
+					>
 						Admin Panel
+					</Link>
+				</NavbarItem>
+				<NavbarItem>
+					<Button as={Link} color="secondary" href="/projects" variant="flat">
+						View Projects
 					</Button>
 				</NavbarItem>
 			</NavbarContent>
 		</Navbar>
 	);
 }
+ */
