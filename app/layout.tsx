@@ -5,7 +5,7 @@ import Menu from "./components/menu/Menu";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-	title: "Starter template",
+	title: "Brandingweb",
 	description: "by patoreguera",
 };
 

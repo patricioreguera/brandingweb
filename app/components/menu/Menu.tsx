@@ -50,8 +50,8 @@ export default function Menu() {
 			</NavbarContent>
 			<NavbarContent justify="end">
 				<NavbarItem>
-					<Button as={Link} color="secondary" href="#" variant="flat">
-						Sign Up
+					<Button as={Link} color="secondary" href="/admin" variant="flat">
+						Admin Panel
 					</Button>
 				</NavbarItem>
 			</NavbarContent>
