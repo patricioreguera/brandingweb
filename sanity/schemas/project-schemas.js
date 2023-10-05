@@ -40,6 +40,12 @@ const project = {
 			type: "array",
 			of: [{ type: "block" }],
 		},
+		{
+			title: "demo",
+			name: "demo",
+			type: "array",
+			of: [{ type: "string" }, { type: "string" }],
+		},
 	],
 };
 
