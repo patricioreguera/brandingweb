@@ -31,7 +31,9 @@ export default function App() {
 	];
 
 	return (
-		<Navbar /* onMenuOpenChange={() => setIsMenuOpen(!isMenuOpen)} */>
+		<Navbar
+			isBordered /* onMenuOpenChange={() => setIsMenuOpen(!isMenuOpen)} */
+		>
 			<NavbarContent>
 				<NavbarMenuToggle
 					aria-label={isMenuOpen ? "Close menu" : "Open menu"}
