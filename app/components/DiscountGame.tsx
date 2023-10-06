@@ -84,7 +84,7 @@ const DiscountGame: React.FC = () => {
 	const { opciones, mensaje } = state;
 
 	return (
-		<div className="flex flex-col justify-center items-center p-20 gap-5">
+		<div className="flex flex-col justify-center items-center p-20 gap-5 bg-hero-pattern w-full">
 			<p>{mensaje}</p>
 			<div className="flex gap-5">
 				{opciones.map((item, index) => (
@@ -92,6 +92,8 @@ const DiscountGame: React.FC = () => {
 						shadow="sm"
 						key={index}
 						isPressable
+						isBlurred
+						className="bg-slate-950 bg-opacity-50"
 						onPress={() => handleClick(item, index)}
 					>
 						<CardBody className="overflow-visible p-10 justify-center  items-center">
