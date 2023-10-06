@@ -57,7 +57,7 @@ const Home = async () => {
 
 				{/* Llamado a la Acción (CTA) Final */}
 				<Cta />
-				<DiscountGame />
+				{/* <DiscountGame /> */}
 
 				{/* Pie de Página */}
 				<Footer />
