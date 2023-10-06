@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { Card, CardBody } from "@nextui-org/card";
-import confetti from "canvas-confetti";
+/* import confetti from "canvas-confetti"; */
 
 import {
 	Modal,
@@ -37,18 +37,14 @@ const DiscountGame: React.FC = () => {
 		setState({ ...state, opcionGanadora: nuevaPosicionGanadora });
 	}, []);
 
-	const handleConfeti = () => {
-		// Configura las opciones de los confetis
+	/* 	const handleConfeti = () => {
+		
 		const config = {
 			angle: 90,
 			spread: 45,
 			particleCount: 100,
 			/* origin: { y: 0.7 }, */
-		};
 
-		// Lanza los confetis
-		confetti(config);
-	};
 	const handleClick = (opcion: string, index: number) => {
 		const { opcionGanadora, oportunidades, juegoTerminado } = state;
 
@@ -64,7 +60,7 @@ const DiscountGame: React.FC = () => {
 				juegoTerminado: true,
 			});
 			// Mostrar el modal cuando se gane
-			handleConfeti();
+
 			onOpen();
 		} else if (oportunidades > 0) {
 			setState({
