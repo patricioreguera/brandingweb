@@ -6,8 +6,6 @@ import { Card, CardHeader, CardFooter } from "@nextui-org/card";
 import { Button } from "@nextui-org/button";
 const Projects = async () => {
 	const projects = await getProjects();
-	// ya con el resultado de la llamada se puede hacer el .map
-	console.log(projects);
 
 	return (
 		<>

@@ -3,8 +3,6 @@ import { Button } from "@nextui-org/button";
 import Link from "next/link";
 import imageBackground from "../../public/background.svg";
 const HeaderHero = () => {
-	console.log("Ruta del SVG:", imageBackground); // Verifica la ruta del SVG
-	console.log("URL de fondo:", `url(${imageBackground})`);
 	return (
 		<header className="flex items-center justify-center flex-col w-full mt-20 min-h-[calc(75vh-64px)]  bg-hero-pattern bg-no-repeat bg-cover ">
 			<div className="text-center leading-9 md:leading-10 md:text-left">
