@@ -1,4 +1,4 @@
-/* "use client"; */
+"use client";
 import { getProjects } from "@/sanity/sanity-utils";
 
 import { Image } from "@nextui-org/image";

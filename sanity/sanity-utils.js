@@ -19,3 +19,21 @@ export async function getProjects() {
         }`
 	);
 }
+export async function getServices() {
+	const client = createClient({
+		projectId: process.env.NEXT_PUBLIC_SANITY,
+		dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || "productions",
+		apiVersion: "2023-05-18",
+	});
+
+	return client.fetch(
+		groq`*[_type == "services"]{
+            _id,
+            _createdAt,
+            title,
+            "slug":slug.current,
+            "image":image.asset->url,
+            description
+        }`
+	);
+}

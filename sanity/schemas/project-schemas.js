@@ -41,10 +41,19 @@ const project = {
 			of: [{ type: "block" }],
 		},
 		{
-			title: "demo",
-			name: "demo",
-			type: "array",
-			of: [{ type: "string" }, { type: "string" }],
+			name: "inputType",
+			title: "Input Type",
+			type: "string",
+			initialValue: "text",
+			options: {
+				layout: "dropdown",
+				list: [
+					{ value: "web", title: "Website" },
+					{ value: "design", title: "Design" },
+					{ value: "marketing", title: "Marketing" },
+					{ value: "branding", title: "Branding" },
+				],
+			},
 		},
 	],
 };
