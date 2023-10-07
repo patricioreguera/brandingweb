@@ -12,7 +12,7 @@ const ProductHero = () => {
 					{/* Imagen del Producto */}
 					<div className="mx-auto">
 						<Image
-							/* src="url-de-la-imagen-del-producto.jpg" */
+							src="https://nextui-docs-v2.vercel.app/images/hero-card-complete.jpeg"
 							alt="Producto Destacado"
 							className="max-w-full"
 						/>
