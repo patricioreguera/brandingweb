@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "@nextui-org/button";
 import Link from "next/link";
-import imageBackground from "../../public/background.svg";
+
 const HeaderHero = () => {
 	return (
 		<header className="flex items-center justify-center flex-col w-full mt-20 min-h-[calc(75vh-64px)]  bg-hero-pattern bg-no-repeat bg-cover ">
@@ -13,10 +13,10 @@ const HeaderHero = () => {
 					<h1 className="tracking-tight inline font-semibold from-[#FF1CF7] to-[#b249f8] text-[3rem] lg:text-7xl bg-clip-text text-transparent bg-gradient-to-r">
 						Digital&nbsp;
 					</h1>
+					<h1 className="tracking-tight inline font-semibold text-[3rem] lg:text-7xl">
+						Ahora!
+					</h1>
 				</div>
-				<h1 className="tracking-tight inline font-semibold text-[3rem] lg:text-7xl">
-					Ahora!
-				</h1>
 			</div>
 			<h4 className="w-full my-2 font-thin lg:text-xl  text-default-500 block max-w-full text-center  ">
 				Destaca en línea con nuestro servicio de diseño web.

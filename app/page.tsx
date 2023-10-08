@@ -13,12 +13,10 @@ import Socialtest from "./components/Socialtest";
 import ContactInformation from "./components/ContactInformation";
 import Promotions from "./components/Promotions";
 import ProductHero from "./components/ProductHero";
-import Benefits from "./components/Benefits";
+import Benefits from "./components/benefits/Benefits";
 import Testimonials from "./components/testimonials/Testimonials";
 import CtaHero from "./components/CtaHero";
 import HeaderHero from "./components/HeaderHero";
-import DiscountGame from "./components/DiscountGame";
-import Navegator from "./components/Navegation";
 
 const Home = async () => {
 	return (
