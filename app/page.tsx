@@ -21,7 +21,7 @@ import HeaderHero from "./components/HeaderHero";
 const Home = async () => {
 	return (
 		<>
-			<div className="flex flex-col items-center p-0 m-auto w-full">
+			<div className="flex flex-col items-center p-0 m-auto w-full ">
 				{/* Encabezado */}
 				<HeaderHero />
 

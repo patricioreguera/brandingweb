@@ -39,6 +39,9 @@ module.exports = {
 			black: "#090E34",
 			dark: "#17181f",
 
+			n_primary: "#28316c",
+			n_secondary: "#bf39d2",
+			n_tertiary: "#00ffae",
 			primary: "#6D28D9",
 			primaryDark: "#351668",
 			pureBlack: "#000000",
