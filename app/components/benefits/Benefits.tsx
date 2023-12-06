@@ -1,5 +1,4 @@
 import React from "react";
-
 import BenefitsCard from "./components/BenefitsCard";
 
 const Benefits = () => {

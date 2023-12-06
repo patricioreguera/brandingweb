@@ -37,8 +37,11 @@ module.exports = {
 			transparent: "transparent",
 			white: "#FFFFFF",
 			black: "#090E34",
-			dark: "#17181f",
+			dark: "#FFFFFF",
+			//new colors
+			r_black: "#181820",
 
+			//end new
 			n_primary: "#28316c",
 			n_secondary: "#bf39d2",
 			n_tertiary: "#00ffae",

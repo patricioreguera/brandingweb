@@ -1,9 +1,7 @@
 /* "use client"; */
 
 /* import Image from "next/image"; */
-import { Kbd } from "@nextui-org/kbd";
 
-import Features from "./components/Features";
 import Footer from "./components/Footer";
 import Cta from "./components/Cta";
 import PersuasiveContent from "./components/PersuasiveContent";
@@ -17,6 +15,7 @@ import Benefits from "./components/benefits/Benefits";
 import Testimonials from "./components/testimonials/Testimonials";
 import CtaHero from "./components/CtaHero";
 import HeaderHero from "./components/HeaderHero";
+import DiscountGame from "./components/DiscountGame";
 
 const Home = async () => {
 	return (
@@ -56,7 +55,7 @@ const Home = async () => {
 
 				{/* Llamado a la Acción (CTA) Final */}
 				<Cta />
-				{/* <DiscountGame /> */}
+				<DiscountGame />
 
 				{/* Pie de Página */}
 				<Footer />
