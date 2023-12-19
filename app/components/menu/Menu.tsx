@@ -32,9 +32,9 @@ export default function App() {
 
 	return (
 		<Navbar
-			isBlurred
+			isBlurred /* onMenuOpenChange={() => setIsMenuOpen(!isMenuOpen)} */
 			/* className="bg-r_black" */
-			isBordered /* onMenuOpenChange={() => setIsMenuOpen(!isMenuOpen)} */
+			/* isBordered  */
 		>
 			<NavbarContent>
 				<NavbarMenuToggle

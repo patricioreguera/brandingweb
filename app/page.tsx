@@ -33,28 +33,28 @@ const Home = async () => {
 				{/* Beneficios Claramente Comunicados */}
 				<Benefits />
 				{/* Sección de Producto Impactante */}
-				<ProductHero />
+				{/* <ProductHero /> */}
 
 				{/* Ofertas y Promociones */}
 				<Promotions />
 
 				{/* Información de Contacto */}
-				<ContactInformation />
+				{/* <ContactInformation /> */}
 
 				{/* Prueba Social */}
-				<Socialtest />
+				{/* <Socialtest /> */}
 
 				{/* Garantías o Políticas de Devolución */}
-				<Garanties />
+				{/* <Garanties /> */}
 
 				{/* Sección de Preguntas Frecuentes (FAQ) */}
-				<Faq />
+				{/* <Faq /> */}
 
 				{/* Contenido Persuasivo */}
-				<PersuasiveContent />
+				{/* <PersuasiveContent /> */}
 
 				{/* Llamado a la Acción (CTA) Final */}
-				<Cta />
+				{/* <Cta /> */}
 				<DiscountGame />
 
 				{/* Pie de Página */}
