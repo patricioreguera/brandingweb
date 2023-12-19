@@ -33,7 +33,7 @@ export default function App() {
 	return (
 		<Navbar
 			isBlurred /* onMenuOpenChange={() => setIsMenuOpen(!isMenuOpen)} */
-			/* className="bg-r_black" */
+			className=""
 			/* isBordered  */
 		>
 			<NavbarContent>
@@ -43,8 +43,12 @@ export default function App() {
 				/>
 				<NavbarBrand>
 					<Link href="/">
-						<h1>
-							BRANDING<span className="font-bold text-inherit">WEB</span>
+						<h1 className="flex align-middle justify-center items-center">
+							<span className="font-black text-lg text-inherit bg-gradient-to-r from-n_violet  to-n_violet2 text-transparent bg-clip-text">
+								BW.
+							</span>
+							BRANDING
+							<span className="font-bold text-inherit">WEB</span>
 						</h1>
 					</Link>
 				</NavbarBrand>
