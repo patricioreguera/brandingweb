@@ -9,7 +9,13 @@ import {
 	useDisclosure,
 } from "@nextui-org/react";
 /* import heropicture from "../../../public/images/heropicture.png"; */
-export const ModalComponent = () => {
+
+interface ModalItems {
+	title: string;
+	description: string;
+}
+
+export const ModalComponent = ({ title, description }: ModalItems) => {
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
 	return (
@@ -23,7 +29,7 @@ export const ModalComponent = () => {
 				placement="auto"
 				backdrop="blur"
 				/* backdrop="opaque" */
-				size="5xl"
+				size="md"
 				/* 	classNames={{
 					body: "py-6",
 					backdrop:
@@ -38,14 +44,10 @@ export const ModalComponent = () => {
 					{(onClose) => (
 						<>
 							<ModalHeader className="flex flex-col gap-1 ">
-								<h1 className="font-extralight text-3xl">Modal Title</h1>
+								<h1 className="font-extralight text-3xl">{title}</h1>
 							</ModalHeader>
 							<ModalBody>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-									Nullam pulvinar risus non risus hendrerit venenatis.
-									Pellentesque sit amet hendrerit risus, sed porttitor quam.
-								</p>
+								<p>{description}</p>
 							</ModalBody>
 							<ModalFooter>
 								<Button color="secondary" variant="light" onPress={onClose}>

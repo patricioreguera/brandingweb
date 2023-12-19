@@ -1,6 +1,7 @@
 import React from "react";
 import Icon from "@mdi/react";
 import { ModalComponent } from "../../Modal/ModalComponent";
+import { PopOver } from "../../PopOver/PopOver";
 
 interface AdvItem {
 	icon: any;
@@ -18,7 +19,8 @@ const AdvantagesItem = ({ icon, title, description }: AdvItem) => {
 			<p className="font-thin lg:text-xl text-default-500 text-sm max-w-xs text-center">
 				{description}
 			</p>
-			<ModalComponent />
+
+			<PopOver title={title} description={description} />
 		</div>
 	);
 };
