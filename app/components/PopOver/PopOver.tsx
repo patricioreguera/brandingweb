@@ -5,14 +5,12 @@ import {
 	PopoverContent,
 	Button,
 } from "@nextui-org/react";
-import Image from "next/image";
-import heropicture from "../../../public/images/heropicture.png";
 
 interface PopOverItems {
-	title: string;
-	description: string;
+	title?: string;
+	desciption_large: string;
 }
-export const PopOver = ({ title, description }: PopOverItems) => {
+export const PopOver = ({ desciption_large }: PopOverItems) => {
 	return (
 		<Popover placement="top" showArrow={true}>
 			<PopoverTrigger>
@@ -20,17 +18,9 @@ export const PopOver = ({ title, description }: PopOverItems) => {
 					View Details
 				</Button>
 			</PopoverTrigger>
-			<PopoverContent>
+			<PopoverContent className="p-5 bg-n_violet">
 				<div>
-					<Image
-						src={heropicture}
-						alt="Producto Destacado"
-						className="max-w-[400px]"
-					/>
-					<h1 className="text-4xl font-bold bg-gradient-to-r from-white  to-n_violet2 text-transparent bg-clip-text">
-						{title}
-					</h1>
-					<div className="text-tiny">{description}</div>
+					<div className="text-base tracking-wide">{desciption_large}</div>
 				</div>
 			</PopoverContent>
 		</Popover>

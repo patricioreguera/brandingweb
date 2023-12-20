@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import { Providers } from "./providers";
 import { Menu } from "./components/menu/Menu";
 const inter = Inter({ subsets: ["latin"] });
+import { ContextProvider } from "./context/ContextProvider";
+import { LanguageProvider } from "./context/LanguageProvider";
 
 export const metadata = {
 	title: "Brandingweb",
@@ -17,10 +19,14 @@ export default function RootLayout({
 	return (
 		<html lang="es" className="dark">
 			<body className={inter.className}>
-				<Providers>
-					<Menu />
-					{children}
-				</Providers>
+				<LanguageProvider>
+					<ContextProvider>
+						<Providers>
+							<Menu />
+							{children}
+						</Providers>
+					</ContextProvider>
+				</LanguageProvider>
 			</body>
 		</html>
 	);

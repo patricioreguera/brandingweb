@@ -1,14 +1,13 @@
-import { getProjects } from "@/sanity/sanity-utils";
-
+import { getProjects, getServices } from "@/sanity/sanity-utils";
 import { Image } from "@nextui-org/image";
 import { Card, CardHeader, CardFooter } from "@nextui-org/card";
 import { Button } from "@nextui-org/button";
+
 const Projects = async () => {
 	const projects = await getProjects();
 
 	return (
 		<>
-			<h1>Projects</h1>
 			<div className="gap-3 flex flex-wrap px-8 justify-center">
 				{projects?.map((project: any) => (
 					<Card

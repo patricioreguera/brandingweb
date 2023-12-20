@@ -11,9 +11,12 @@ import {
 	NavbarMenuItem,
 } from "@nextui-org/react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { LanguageSwitcher } from "../LanguageButton/LanguageSwitcher";
 
 export const Menu = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	const pathname = usePathname();
 
 	const menuItems = [
 		{
@@ -23,6 +26,10 @@ export const Menu = () => {
 		{
 			title: "Projects",
 			url: "/projects",
+		},
+		{
+			title: "Contact",
+			url: "/contact",
 		},
 		{
 			title: "Contact",
@@ -55,37 +62,46 @@ export const Menu = () => {
 			</NavbarContent>
 
 			<NavbarContent className="hidden sm:flex gap-4" justify="center">
-				<NavbarItem>
-					<Link color="foreground" href="#">
+				<NavbarItem isActive={pathname === "/projects"}>
+					<Link
+						className={
+							pathname === "/projects"
+								? "text-n_violet"
+								: "text-dark hover:text-n_violet"
+						}
+						href="/projects"
+					>
 						Products
 					</Link>
 				</NavbarItem>
-				<NavbarItem isActive>
-					<Link href="#" aria-current="page">
+				<NavbarItem isActive={pathname === "/"}>
+					<Link href="/" aria-current="page" color="secondary">
 						Contact
 					</Link>
 				</NavbarItem>
 			</NavbarContent>
 			<NavbarContent justify="end">
-				<NavbarItem>
-					<Button as={Link} color="secondary" href="/projects" variant="ghost">
+				<NavbarItem className="flex ">
+					<LanguageSwitcher />
+					{/* <Button as={Link} color="secondary" href="/projects" variant="ghost">
 						View Projects
-					</Button>
+					</Button> */}
 				</NavbarItem>
 			</NavbarContent>
+			{/* MENU MOBIL */}
 			<NavbarMenu>
 				{menuItems.map((item, index) => (
 					<NavbarMenuItem key={`${item}-${index}`}>
 						<Link
-							color={
+							/* 	color={
 								index === 2
 									? "primary"
 									: index === menuItems.length - 1
 									? "danger"
 									: "foreground"
-							}
+							} */
 							className="w-full"
-							href={item.url}
+							href={item?.url}
 						>
 							{item.title}
 						</Link>
