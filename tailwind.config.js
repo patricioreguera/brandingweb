@@ -45,7 +45,8 @@ module.exports = {
 			n_primary: "#28316c",
 			n_secondary: "#bf39d2",
 			n_tertiary: "#00ffae",
-			n_violet: "#8c21f8",
+			n_violet: "#9455d3",
+			/* n_violet: "#8c21f8", */
 			n_violet2: "#a958fa",
 
 			primary: "#6D28D9",

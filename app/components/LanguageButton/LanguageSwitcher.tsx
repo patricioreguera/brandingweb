@@ -13,14 +13,20 @@ export const LanguageSwitcher = () => {
 
 	return (
 		<>
-			<span className="pr-3">ES</span>
+			<span
+				className={isSelected ? "pr-3 text-bordergray" : "text-n_violet pr-3"}
+			>
+				ES
+			</span>
 			<Switch
 				isSelected={isSelected}
 				onValueChange={handelLenguage}
 				size="sm"
 				color="secondary"
 			></Switch>
-			<span>EN</span>
+			<span className={!isSelected ? "text-bordergray" : "text-n_violet"}>
+				EN
+			</span>
 		</>
 	);
 };
