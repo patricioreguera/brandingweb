@@ -1,8 +1,18 @@
 {
-    "ESPAÑOL": "Hola",
+    "ESPAÑOL": "Español",
     "SPEED": "VELOCIDAD",
-   "PERSONALIZED_DESIGN":"DISEÑO PERSONALIZADO",
-   "SAVE_MONEY": "AHORRA DINERO",
-   "HERO_TITLE": "Comienza tu viaje Digital Ahora"
+    "SPEED_DESCRIPTION_SHORT":"Rapidez Insuperable: Cargas 200% más rápidas, superando a la competencia.",
+    "SPEED_DESCRIPTION":"Entendemos la importancia de la velocidad en la experiencia web. Por ello, nos enorgullecemos de ofrecer sitios web que no solo son visualmente impresionantes, sino también increíblemente rápidos. Nuestros sitios web están optimizados para cargar un 200% más rápido que los de la competencia, lo que significa que tus visitantes disfrutarán de una experiencia de navegación fluida y sin demoras. Esta rapidez no solo mejora la experiencia del usuario, sino que también contribuye a un mejor ranking en los motores de búsqueda, lo que es crucial para el éxito online.",
+    "PERSONALIZED_DESIGN":"DISEÑO PERSONALIZADO",
+    "PERSONALIZED_DESIGN_DESCRIPTION_SHORT": "Todos nuestros diseños son personalizados, sin templates",
+    "PERSONALIZED_DESIGN_DESCRIPTION": "En nuestra empresa, creemos que cada cliente es único y merece un diseño web que refleje su identidad y valores. Por eso, nos dedicamos a crear diseños web exclusivos y a medida, sin recurrir a plantillas predefinidas. Nuestro equipo de diseñadores experimentados trabaja estrechamente contigo para entender tu visión y transformarla en una realidad digital, asegurando que tu sitio web no solo sea estéticamente atractivo, sino también funcional y representativo de tu marca.",
+    "SAVE_MONEY": "AHORRA DINERO",
+    "SAVE_MONEY_DESCRIPTION_SHORT": "Economiza Inteligentemente: Ahorra hasta 200€ al año sin costes de alojamiento web",
+    "SAVE_MONEY_DESCRIPTION": "Nuestra solución de tecnología web te permite ahorrar significativamente. Con nosotros, podrás reducir tus gastos anuales hasta en 200€ gracias a nuestra innovadora tecnología libre de alojamiento web. Esta característica no solo disminuye tus costos operativos, sino que también simplifica el proceso de gestión de tu sitio web. Al elegirnos, obtienes no solo un sitio web de alta calidad, sino también una solución económica y eficiente, permitiéndote invertir más en otras áreas críticas de tu negocio.",
+    "HERO_TITLE": "Comienza tu viaje Digital Ahora",
+    "HERO_DESCRIPTION": "Destaca en línea con nuestro servicio de diseño web.",
+    "VIEW_PROJECTS":"Ver Proyectos",
+    "VIEW_DETAILS":"Ver Detalles"
+
 }
   

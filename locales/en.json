@@ -1,8 +1,18 @@
 {
-    "ESPAÑOL": "Hello",
+    "ESPAÑOL": "Spanish",
     "SPEED": "SPEED",
+    "SPEED_DESCRIPTION_SHORT":"Unmatched Speed: Loading times 200% faster than the competition.",
+    "SPEED_DESCRIPTION":"We understand the crucial role speed plays in the web experience. That's why we pride ourselves on offering websites that are not only visually stunning but also incredibly fast. Our websites are optimized to load 200% faster than our competitors, ensuring that your visitors enjoy a seamless and delay-free browsing experience. This speed not only enhances user experience but also contributes to better search engine rankings, which is vital for online success.",
     "PERSONALIZED_DESIGN": "PERSONALIZED DESIGN",
+    "PERSONALIZED_DESIGN_DESCRIPTION_SHORT": "All our designs are personalized, without templates",
+    "PERSONALIZED_DESIGN_DESCRIPTION": "At our company, we believe that each client is unique and deserves a web design that reflects their identity and values. That’s why we are committed to creating exclusive, tailor-made web designs without relying on predefined templates. Our team of experienced designers collaborates closely with you to understand your vision and turn it into a digital reality, ensuring that your website is not only aesthetically pleasing but also functional and representative of your brand.",
     "SAVE_MONEY": "SAVE MONEY",
-    "HERO_TITLE": "Start your Digital Journey Now"
+    "SAVE_MONEY_DESCRIPTION_SHORT": "Smart Savings: Save up to €200 annually with our web hosting-free technology.",
+    "SAVE_MONEY_DESCRIPTION": "Our web technology solution allows you to save significantly. With us, you can reduce your annual expenses by up to €200 thanks to our innovative web hosting-free technology. This feature not only lowers your operational costs but also simplifies your website management process. By choosing us, you get not just a high-quality website but also an economical and efficient solution, allowing you to invest more in other critical areas of your business.",
+    "HERO_TITLE": "Start your Digital Journey Now",
+    "HERO_DESCRIPTION": "Stand out online with our web design service.",
+    "VIEW_PROJECTS": "View Projects",
+    "VIEW_DETAILS":"View Details"
+
 }
   

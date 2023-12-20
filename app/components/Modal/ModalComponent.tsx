@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import {
 	Modal,
@@ -8,6 +9,7 @@ import {
 	Button,
 	useDisclosure,
 } from "@nextui-org/react";
+import { useLanguage } from "@/app/context/LanguageProvider";
 /* import heropicture from "../../../public/images/heropicture.png"; */
 
 interface ModalItems {
@@ -17,11 +19,12 @@ interface ModalItems {
 
 export const ModalComponent = ({ title, description }: ModalItems) => {
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
+	const { translate } = useLanguage();
 
 	return (
 		<>
 			<Button onPress={onOpen} color="secondary" variant="ghost">
-				View Details
+				{translate.VIEW_DETAILS}
 			</Button>
 			<Modal
 				isOpen={isOpen}

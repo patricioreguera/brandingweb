@@ -3,13 +3,13 @@ import { createContext, useContext, useState, useEffect } from "react";
 
 interface LanguageContextType {
 	language: string;
-	t: Record<string, string>;
+	translate: Record<string, string>;
 	changeLanguage: (lang: string) => void;
 }
 
 const defaultContextValue: LanguageContextType = {
 	language: "en", // Idioma inicial
-	t: {}, // Objeto vacío inicial para las traducciones
+	translate: {}, // Objeto vacío inicial para las traducciones
 	changeLanguage: () => {}, // Función vacía como inicializador
 };
 
@@ -19,13 +19,13 @@ export const useLanguage = () => useContext(LanguageContext);
 
 export const LanguageProvider = ({ children }: any) => {
 	const [language, setLanguage] = useState("en"); // Idioma por defecto
-	const [t, setT] = useState({});
+	const [translate, setTranslate] = useState({});
 
 	useEffect(() => {
 		// Cargar las traducciones según el idioma seleccionado
 		import(`../../locales/${language}.json`)
 			.then((module) => {
-				setT(module.default);
+				setTranslate(module.default);
 			})
 			.catch((error) => {
 				console.error("Error loading translations", error);
@@ -35,7 +35,7 @@ export const LanguageProvider = ({ children }: any) => {
 	const changeLanguage = (lang: any) => setLanguage(lang);
 
 	return (
-		<LanguageContext.Provider value={{ language, t, changeLanguage }}>
+		<LanguageContext.Provider value={{ language, translate, changeLanguage }}>
 			{children}
 		</LanguageContext.Provider>
 	);
