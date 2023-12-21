@@ -77,7 +77,7 @@ export const Menu = () => {
 				</NavbarItem>
 			</NavbarContent>
 			{/* MENU MOBIL */}
-			<NavbarMenu className="flex items-center justify-between p-5 ">
+			<NavbarMenu className="flex items-center justify-around p-5 ">
 				<NavbarMenuItem className="flex flex-col gap-10 text-center">
 					{menuItems.map((item, index) => (
 						<NavbarMenuItem key={`${item}-${index}`}>

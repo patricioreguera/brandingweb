@@ -3,6 +3,7 @@ import Promotions from "./components/Promotions";
 import ProductHero from "./components/ProductHero";
 import HeaderHero from "./components/HeaderHero";
 import Advantages from "./components/Advantages/Advantages";
+import DiscountGame from "./components/DiscountGame";
 
 const Home = async () => {
 	return (
