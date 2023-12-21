@@ -15,7 +15,8 @@ export async function getProjects() {
             "slug":slug.current,
             "image":image.asset->url,
             url,
-            content
+            content,
+			inputType
         }`
 	);
 }

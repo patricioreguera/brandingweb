@@ -62,7 +62,7 @@ export const Menu = () => {
 						}
 						href="/projects"
 					>
-						Products
+						Projects
 					</Link>
 				</NavbarItem>
 				<NavbarItem isActive={pathname === "/"}>
