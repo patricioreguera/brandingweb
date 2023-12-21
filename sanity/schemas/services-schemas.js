@@ -35,6 +35,21 @@ const services = {
 			type: "array",
 			of: [{ type: "block" }],
 		},
+		{
+			title: "Price",
+			name: "price",
+			type: "number",
+			inputComponent: NumericInput,
+			validation: (Rule) => Rule.positive(),
+			options: {
+				decimalScale: 2,
+				fixedDecimalScale: true,
+				allowNegative: false,
+				decimalSeparator: ",",
+				thousandSeparator: ".",
+				prefix: "€ ",
+			},
+		},
 	],
 };
 

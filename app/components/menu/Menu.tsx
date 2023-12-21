@@ -27,6 +27,10 @@ export const Menu = () => {
 			url: "/projects",
 		},
 		{
+			title: "Services",
+			url: "/services",
+		},
+		{
 			title: "Contact",
 			url: "/contact",
 		},
@@ -65,8 +69,27 @@ export const Menu = () => {
 						Projects
 					</Link>
 				</NavbarItem>
-				<NavbarItem isActive={pathname === "/"}>
-					<Link href="/" aria-current="page" color="secondary">
+				<NavbarItem isActive={pathname === "/services"}>
+					<Link
+						className={
+							pathname === "/services"
+								? "text-n_violet"
+								: "text-dark hover:text-n_violet"
+						}
+						href="/services"
+					>
+						Services
+					</Link>
+				</NavbarItem>
+				<NavbarItem isActive={pathname === "/contact"}>
+					<Link
+						className={
+							pathname === "/contact"
+								? "text-n_violet"
+								: "text-dark hover:text-n_violet"
+						}
+						href="/contact"
+					>
 						Contact
 					</Link>
 				</NavbarItem>

@@ -5,6 +5,7 @@ import { Menu } from "./components/menu/Menu";
 const inter = Inter({ subsets: ["latin"] });
 import { ContextProvider } from "./context/ContextProvider";
 import { LanguageProvider } from "./context/LanguageProvider";
+import Footer from "./components/Footer";
 
 export const metadata = {
 	title: "Brandingweb",
@@ -24,6 +25,7 @@ export default function RootLayout({
 						<Providers>
 							<Menu />
 							{children}
+							<Footer />
 						</Providers>
 					</ContextProvider>
 				</LanguageProvider>

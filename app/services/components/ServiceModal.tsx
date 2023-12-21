@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 import {
 	Modal,
@@ -15,15 +14,14 @@ import { Image } from "@nextui-org/image";
 import NextImage from "next/image";
 import Link from "next/link";
 
-interface ProjectIterface {
-	project: {
+interface ServiceIterface {
+	service: {
 		id: string;
 		title: string;
-		name: string;
 		image: string;
 		inputType: string;
 		url: string;
-		content: {
+		description: {
 			children: {
 				text: string;
 			}[];
@@ -31,19 +29,19 @@ interface ProjectIterface {
 	};
 }
 
-export const ProjectModal = ({ project }: ProjectIterface) => {
+export const ServiceModal = ({ service }: ServiceIterface) => {
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
-	console.log(project);
+	console.log(service);
 
 	return (
 		<>
 			<Image
 				as={NextImage}
-				key={project.id}
+				key={service.id}
 				width={300}
 				height={300}
-				alt={project.name}
-				src={project.image}
+				alt={service.title}
+				src={service.image}
 				onClick={onOpen}
 				className="hover:cursor-pointer"
 			/>
@@ -59,21 +57,21 @@ export const ProjectModal = ({ project }: ProjectIterface) => {
 							<ModalHeader className="grid grid-cols-4 gap-5 ">
 								<Image
 									as={NextImage}
-									key={project.id}
+									key={service.id}
 									isBlurred
 									width={100}
 									height={100}
-									alt={project.name}
-									src={project.image}
+									alt={service.title}
+									src={service.image}
 									onClick={onOpen}
 								/>
 								<div className="col-span-3 ">
-									<h1 className="font-extralight text-3xl">{project.name}</h1>
+									<h1 className="font-extralight text-3xl">{service.title}</h1>
 									<p className="text-sm font-light  bg-bordergray w-fit px-3 rounded-full my-2">
-										{project.inputType}
+										{service.inputType}
 									</p>
 									<p className="font-light text-sm">
-										{project.content[0].children[0].text}
+										{service.description[0].children[0].text}
 									</p>
 								</div>
 							</ModalHeader>
@@ -82,15 +80,14 @@ export const ProjectModal = ({ project }: ProjectIterface) => {
 								<Button color="default" onPress={onClose} variant="bordered">
 									Ver mas detalles
 								</Button>
-								{project.url && (
+								{service.url && (
 									<Button color="default" onPress={onClose}>
 										<Link
-											href={project.url}
+											href={service.url}
 											rel="noopener noreferrer"
 											target="_blank"
 										>
-											{" "}
-											Ver sitio web{" "}
+											Ver sitio web
 										</Link>
 									</Button>
 								)}

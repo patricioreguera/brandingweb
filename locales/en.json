@@ -12,7 +12,11 @@
     "HERO_TITLE": "Start your Digital Journey Now",
     "HERO_DESCRIPTION": "Stand out online with our web design service.",
     "VIEW_PROJECTS": "View Projects",
-    "VIEW_DETAILS":"View Details"
+    "VIEW_DETAILS":"View Details",
+    "OUR_PROJECTS": "Our Projects",
+    "OUR_PROJECTS_DESCRIPTION": "These are some of our latest projects",
+    "OUR_SERVICES": "Our Services",
+    "OUR_SERVICES_DESCRIPTION": "These are some of our services"
 
 }
   
