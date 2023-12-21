@@ -1,19 +1,9 @@
 "use client";
 
 import React from "react";
-import {
-	Modal,
-	ModalContent,
-	ModalHeader,
-	ModalBody,
-	ModalFooter,
-	Button,
-	useDisclosure,
-} from "@nextui-org/react";
 /* import heropicture from "../../../public/images/heropicture.png"; */
 import { Image } from "@nextui-org/image";
 import NextImage from "next/image";
-import Link from "next/link";
 
 interface ProjectIterface {
 	project: {
@@ -32,11 +22,8 @@ interface ProjectIterface {
 }
 
 export const ProjectModal = ({ project }: ProjectIterface) => {
-	const { isOpen, onOpen, onOpenChange } = useDisclosure();
-	console.log(project);
-
 	return (
-		<>
+		<div>
 			<Image
 				as={NextImage}
 				key={project.id}
@@ -44,61 +31,31 @@ export const ProjectModal = ({ project }: ProjectIterface) => {
 				height={300}
 				alt={project.name}
 				src={project.image}
-				onClick={onOpen}
-				className="hover:cursor-pointer"
 			/>
-			<Modal
-				isOpen={isOpen}
-				onOpenChange={onOpenChange}
-				placement="bottom-center"
-				size="md"
-			>
-				<ModalContent>
-					{(onClose) => (
-						<>
-							<ModalHeader className="grid grid-cols-4 gap-5 ">
-								<Image
-									as={NextImage}
-									key={project.id}
-									isBlurred
-									width={100}
-									height={100}
-									alt={project.name}
-									src={project.image}
-									onClick={onOpen}
-								/>
-								<div className="col-span-3 ">
-									<h1 className="font-extralight text-3xl">{project.name}</h1>
-									<p className="text-sm font-light  bg-bordergray w-fit px-3 rounded-full my-2">
-										{project.inputType}
-									</p>
-									<p className="font-light text-sm">
-										{project.content[0].children[0].text}
-									</p>
-								</div>
-							</ModalHeader>
-							<ModalBody></ModalBody>
-							<ModalFooter>
-								<Button color="default" onPress={onClose} variant="bordered">
-									Ver mas detalles
-								</Button>
-								{project.url && (
-									<Button color="default" onPress={onClose}>
-										<Link
-											href={project.url}
-											rel="noopener noreferrer"
-											target="_blank"
-										>
-											{" "}
-											Ver sitio web{" "}
-										</Link>
-									</Button>
-								)}
-							</ModalFooter>
-						</>
-					)}
-				</ModalContent>
-			</Modal>
-		</>
+			<div className="flex gap-2 items-center ">
+				<p
+					className={`text-sm font-light border py-1 ${
+						project.inputType === "web"
+							? "border-n_violet" //Web
+							: project.inputType === "design"
+							? "border-colornav2" //design
+							: project.inputType === "branding"
+							? "border-pink" // branding
+							: "border-btngradient2" //marketing
+					}  w-fit px-3 rounded-full my-2`}
+				>
+					{project.inputType}
+				</p>
+				<h6 className="font-normal text-sm">{project.name}</h6>
+			</div>
+			{/* ? "bg-n_violet" //Web
+							: project.inputType === "design"
+							? "bg-colornav2" //design
+							: "bg-btngradient2"
+							? project.inputType === "branding"
+								? "bg-n_violet"
+								: "bg-pink"
+							: "bg-headerNavbar" */}
+		</div>
 	);
 };
