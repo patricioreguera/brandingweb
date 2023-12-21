@@ -13,7 +13,7 @@ import { useLanguage } from "@/app/context/LanguageProvider";
 /* import heropicture from "../../../public/images/heropicture.png"; */
 import { Image } from "@nextui-org/image";
 import NextImage from "next/image";
-interface ModalItems {
+interface ProjectIterface {
 	project: {
 		id: string;
 		title: string;
@@ -27,7 +27,7 @@ interface ModalItems {
 	};
 }
 
-export const ModalComponent = ({ project }: ModalItems) => {
+export const ProjectModal = ({ project }: ProjectIterface) => {
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 	return (
 		<>
@@ -37,23 +37,36 @@ export const ModalComponent = ({ project }: ModalItems) => {
 				isZoomed
 				width={340}
 				height={340}
-				alt="NextUI Fruit Image with Zoom"
+				alt={project.name}
 				src={project.image}
 				onClick={onOpen}
 			/>
 			<Modal
 				isOpen={isOpen}
 				onOpenChange={onOpenChange}
-				placement="auto"
-				backdrop="blur"
-				/* backdrop="opaque" */
+				placement="bottom-center"
 				size="md"
 			>
 				<ModalContent>
 					{(onClose) => (
 						<>
-							<ModalHeader className="flex flex-col gap-1 ">
-								<h1 className="font-extralight text-3xl">{project.name}</h1>
+							<ModalHeader className="grid grid-cols-4 gap-5 ">
+								<Image
+									as={NextImage}
+									key={project.id}
+									isBlurred
+									width={100}
+									height={100}
+									alt={project.name}
+									src={project.image}
+									onClick={onOpen}
+								/>
+								<div className="col-span-3">
+									<h1 className="font-extralight text-3xl">{project.name}</h1>
+									<p className="text-sm font-light">
+										{project.content[0].children[0].text}
+									</p>
+								</div>
 							</ModalHeader>
 							<ModalBody>
 								<p>{project.content[0].children[0].text}</p>

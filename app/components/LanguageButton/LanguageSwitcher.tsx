@@ -1,10 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useLanguage } from "@/app/context/LanguageProvider";
 import { Switch } from "@nextui-org/react";
 
 export const LanguageSwitcher = () => {
 	const [isSelected, setIsSelected] = useState(true);
-	const { changeLanguage } = useLanguage();
+	const { changeLanguage, language } = useLanguage();
+
+	useEffect(() => {
+		if (language == "es") {
+			setIsSelected(false);
+		}
+	}, []);
 
 	const handelLenguage = () => {
 		setIsSelected(!isSelected);
