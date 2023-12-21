@@ -34,7 +34,6 @@ export const ProjectModal = ({ project }: ProjectIterface) => {
 			<Image
 				as={NextImage}
 				key={project.id}
-				isZoomed
 				width={340}
 				height={340}
 				alt={project.name}
