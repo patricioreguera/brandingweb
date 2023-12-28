@@ -34,7 +34,7 @@ const Budget = () => {
 				description="Revisa tu presupuesto y envianos tu consulta"
 			/>
 			<div className="gap-4  flex flex-col justify-center items-center ">
-				<div className="flex flex-col gap-5 p-20">
+				<div className="flex flex-col gap-5 lg:p-20 p-5">
 					{services.map((service) => (
 						<BudgetCard service={service} key={service._id} />
 					))}
