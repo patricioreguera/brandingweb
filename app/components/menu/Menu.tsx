@@ -9,13 +9,18 @@ import {
 	NavbarMenuToggle,
 	NavbarMenu,
 	NavbarMenuItem,
+	Badge,
 } from "@nextui-org/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { LanguageSwitcher } from "../LanguageButton/LanguageSwitcher";
+import { AppContext } from "@/app/context/ContextProvider";
+import Icon from "@mdi/react";
+import { mdiCartOutline } from "@mdi/js";
 
 export const Menu = () => {
 	const pathname = usePathname();
+	const { services } = AppContext();
 
 	const menuItems = [
 		{
@@ -29,10 +34,6 @@ export const Menu = () => {
 		{
 			title: "Projects",
 			url: "/projects",
-		},
-		{
-			title: "Contact",
-			url: "/contact",
 		},
 	];
 
@@ -76,6 +77,25 @@ export const Menu = () => {
 							</Link>
 						</NavbarItem>
 					))}
+				<Badge
+					content={services.length}
+					shape="circle"
+					color="secondary"
+					placement="top-right"
+				>
+					<NavbarMenuItem>
+						<Link
+							href="/services"
+							className={
+								pathname === "/services"
+									? "text-n_violet "
+									: "text-dark   hover:text-n_violet "
+							}
+						>
+							<Icon path={mdiCartOutline} size={1} />
+						</Link>
+					</NavbarMenuItem>
+				</Badge>
 			</NavbarContent>
 			<NavbarContent justify="end" className="hidden sm:flex gap-4">
 				<NavbarItem className="flex ">
@@ -96,6 +116,25 @@ export const Menu = () => {
 						</NavbarMenuItem>
 					))}
 				</NavbarMenuItem>
+				<Badge
+					content={services.length}
+					shape="circle"
+					color="secondary"
+					placement="top-right"
+				>
+					<NavbarMenuItem>
+						<Link
+							href="/services"
+							className={
+								pathname === "/services"
+									? "text-n_violet"
+									: "text-dark hover:text-n_violet"
+							}
+						>
+							<Icon path={mdiCartOutline} size={2} />
+						</Link>
+					</NavbarMenuItem>
+				</Badge>
 
 				<NavbarMenuItem>
 					<LanguageSwitcher />

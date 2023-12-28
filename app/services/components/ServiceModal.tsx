@@ -13,22 +13,7 @@ import {
 import { Image } from "@nextui-org/image";
 import NextImage from "next/image";
 import Link from "next/link";
-
-interface ServiceIterface {
-	service: {
-		id: string;
-		title: string;
-		image: string;
-		inputType: string;
-		url: string;
-		price: number;
-		description: {
-			children: {
-				text: string;
-			}[];
-		}[];
-	};
-}
+import { ServiceIterface } from "@/app/interfaces/ServiceInterface";
 
 export const ServiceModal = ({ service }: ServiceIterface) => {
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
@@ -49,8 +34,7 @@ export const ServiceModal = ({ service }: ServiceIterface) => {
 				isOpen={isOpen}
 				onOpenChange={onOpenChange}
 				placement="bottom-center"
-				size="full"
-				/* 	size="md" */
+				size="md"
 			>
 				<ModalContent>
 					{(onClose) => (
@@ -79,8 +63,13 @@ export const ServiceModal = ({ service }: ServiceIterface) => {
 							</ModalHeader>
 							<ModalBody></ModalBody>
 							<ModalFooter>
-								<Button color="default" onPress={onClose} variant="bordered">
-									Agregar al Presupuesto
+								<Button
+									isIconOnly
+									color="danger"
+									onPress={onClose}
+									aria-label="Like"
+								>
+									+
 								</Button>
 							</ModalFooter>
 						</>

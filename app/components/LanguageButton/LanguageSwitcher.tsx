@@ -10,7 +10,7 @@ export const LanguageSwitcher = () => {
 		if (language == "es") {
 			setIsSelected(false);
 		}
-	}, []);
+	}, [language]);
 
 	const handelLenguage = () => {
 		setIsSelected(!isSelected);

@@ -32,7 +32,8 @@ export const ProjectModal = ({ project }: ProjectIterface) => {
 				alt={project.name}
 				src={project.image}
 			/>
-			<div className="flex gap-2 items-center ">
+			<div className="flex gap-2 items-center justify-between p-2">
+				<h6 className="font-normal text-sm">{project.name}</h6>
 				<p
 					className={`text-sm font-light border py-1 ${
 						project.inputType === "web"
@@ -46,16 +47,7 @@ export const ProjectModal = ({ project }: ProjectIterface) => {
 				>
 					{project.inputType}
 				</p>
-				<h6 className="font-normal text-sm">{project.name}</h6>
 			</div>
-			{/* ? "bg-n_violet" //Web
-							: project.inputType === "design"
-							? "bg-colornav2" //design
-							: "bg-btngradient2"
-							? project.inputType === "branding"
-								? "bg-n_violet"
-								: "bg-pink"
-							: "bg-headerNavbar" */}
 		</div>
 	);
 };
