@@ -54,7 +54,6 @@ export const Menu = () => {
 						</h1>
 					</Link>
 				</NavbarBrand>
-				<NavbarMenuToggle aria-label={"Open menu"} className="sm:hidden" />
 			</NavbarContent>
 
 			<NavbarContent className="hidden sm:flex gap-4" justify="center">
@@ -77,31 +76,35 @@ export const Menu = () => {
 							</Link>
 						</NavbarItem>
 					))}
-				<Badge
-					content={services.length}
-					shape="circle"
-					color="secondary"
-					placement="top-right"
-				>
-					<NavbarMenuItem>
-						<Link
-							href="/services"
-							className={
-								pathname === "/services"
-									? "text-n_violet "
-									: "text-dark   hover:text-n_violet "
-							}
-						>
-							<Icon path={mdiCartOutline} size={1} />
-						</Link>
-					</NavbarMenuItem>
-				</Badge>
 			</NavbarContent>
+
+			<Badge
+				content={services.length > 0 ? services.length : ""}
+				shape="circle"
+				color="secondary"
+				placement="top-right"
+			>
+				<NavbarItem>
+					<Link
+						href="/services"
+						className={
+							pathname === "/budget"
+								? "text-n_violet"
+								: "text-dark hover:text-n_violet"
+						}
+					>
+						<Icon path={mdiCartOutline} size={1} />
+					</Link>
+				</NavbarItem>
+			</Badge>
+
+			<NavbarMenuToggle aria-label={"Open menu"} className="sm:hidden" />
 			<NavbarContent justify="end" className="hidden sm:flex gap-4">
 				<NavbarItem className="flex ">
 					<LanguageSwitcher />
 				</NavbarItem>
 			</NavbarContent>
+
 			{/* MENU MOBIL */}
 			<NavbarMenu className="flex items-center justify-around p-5 ">
 				<NavbarMenuItem className="flex flex-col gap-10 text-center">
@@ -116,25 +119,6 @@ export const Menu = () => {
 						</NavbarMenuItem>
 					))}
 				</NavbarMenuItem>
-				<Badge
-					content={services.length}
-					shape="circle"
-					color="secondary"
-					placement="top-right"
-				>
-					<NavbarMenuItem>
-						<Link
-							href="/services"
-							className={
-								pathname === "/services"
-									? "text-n_violet"
-									: "text-dark hover:text-n_violet"
-							}
-						>
-							<Icon path={mdiCartOutline} size={2} />
-						</Link>
-					</NavbarMenuItem>
-				</Badge>
 
 				<NavbarMenuItem>
 					<LanguageSwitcher />

@@ -32,7 +32,7 @@ const ServiceCard = ({ service }: ServiceIterface) => {
 	);
 
 	return (
-		<div className="w-[300px]">
+		<div className="w-[300px] ">
 			<Image
 				as={NextImage}
 				key={service._id}
@@ -40,10 +40,10 @@ const ServiceCard = ({ service }: ServiceIterface) => {
 				height={300}
 				alt={service.title}
 				src={service.image}
-				className="hover:cursor-pointer"
+				/* className="hover:cursor-pointer" */
 				draggable="false"
 			/>
-			<div className=" p-3 ">
+			<div className="p-3">
 				<div className="flex flex-col  ">
 					<h6>{service.title}</h6>
 					<p className="text-sm font-thin">
