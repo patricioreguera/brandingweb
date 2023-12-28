@@ -8,7 +8,7 @@ const Home = () => {
 			<div className="flex flex-col items-center p-0 m-auto w-full ">
 				<HeaderHero />
 				<Advantages />
-				{/* 		<Promotions /> */}
+				<Promotions />
 			</div>
 		</>
 	);

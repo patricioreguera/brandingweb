@@ -36,19 +36,10 @@ const services = {
 			of: [{ type: "block" }],
 		},
 		{
-			title: "Price",
 			name: "price",
+			title: "Price",
 			type: "number",
-			inputComponent: NumericInput,
-			validation: (Rule) => Rule.positive(),
-			options: {
-				decimalScale: 2,
-				fixedDecimalScale: true,
-				allowNegative: false,
-				decimalSeparator: ",",
-				thousandSeparator: ".",
-				prefix: "€ ",
-			},
+			description: "the price of the project in EUR",
 		},
 	],
 };

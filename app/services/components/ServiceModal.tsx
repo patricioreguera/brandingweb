@@ -21,6 +21,7 @@ interface ServiceIterface {
 		image: string;
 		inputType: string;
 		url: string;
+		price: number;
 		description: {
 			children: {
 				text: string;
@@ -31,6 +32,7 @@ interface ServiceIterface {
 
 export const ServiceModal = ({ service }: ServiceIterface) => {
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
+	console.log(service);
 
 	return (
 		<>
@@ -48,7 +50,8 @@ export const ServiceModal = ({ service }: ServiceIterface) => {
 				isOpen={isOpen}
 				onOpenChange={onOpenChange}
 				placement="bottom-center"
-				size="md"
+				size="full"
+				/* 	size="md" */
 			>
 				<ModalContent>
 					{(onClose) => (
@@ -72,24 +75,14 @@ export const ServiceModal = ({ service }: ServiceIterface) => {
 									<p className="font-light text-sm">
 										{service.description[0].children[0].text}
 									</p>
+									<p>{service.price}</p>
 								</div>
 							</ModalHeader>
 							<ModalBody></ModalBody>
 							<ModalFooter>
 								<Button color="default" onPress={onClose} variant="bordered">
-									Ver mas detalles
+									Agregar al Presupuesto
 								</Button>
-								{service.url && (
-									<Button color="default" onPress={onClose}>
-										<Link
-											href={service.url}
-											rel="noopener noreferrer"
-											target="_blank"
-										>
-											Ver sitio web
-										</Link>
-									</Button>
-								)}
 							</ModalFooter>
 						</>
 					)}

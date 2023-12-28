@@ -23,12 +23,12 @@ export const Menu = () => {
 			url: "/",
 		},
 		{
-			title: "Projects",
-			url: "/projects",
-		},
-		{
 			title: "Services",
 			url: "/services",
+		},
+		{
+			title: "Projects",
+			url: "/projects",
 		},
 		{
 			title: "Contact",
@@ -57,42 +57,25 @@ export const Menu = () => {
 			</NavbarContent>
 
 			<NavbarContent className="hidden sm:flex gap-4" justify="center">
-				<NavbarItem isActive={pathname === "/projects"}>
-					<Link
-						className={
-							pathname === "/projects"
-								? "text-n_violet"
-								: "text-dark hover:text-n_violet"
-						}
-						href="/projects"
-					>
-						Projects
-					</Link>
-				</NavbarItem>
-				<NavbarItem isActive={pathname === "/services"}>
-					<Link
-						className={
-							pathname === "/services"
-								? "text-n_violet"
-								: "text-dark hover:text-n_violet"
-						}
-						href="/services"
-					>
-						Services
-					</Link>
-				</NavbarItem>
-				<NavbarItem isActive={pathname === "/contact"}>
-					<Link
-						className={
-							pathname === "/contact"
-								? "text-n_violet"
-								: "text-dark hover:text-n_violet"
-						}
-						href="/contact"
-					>
-						Contact
-					</Link>
-				</NavbarItem>
+				{menuItems
+					.filter((menuitem) => menuitem.url !== "/")
+					.map((menuitem) => (
+						<NavbarItem
+							isActive={pathname === menuitem.url}
+							key={menuitem.title}
+						>
+							<Link
+								className={
+									pathname === menuitem.url
+										? "text-n_violet"
+										: "text-dark hover:text-n_violet"
+								}
+								href={menuitem.url}
+							>
+								{menuitem.title}
+							</Link>
+						</NavbarItem>
+					))}
 			</NavbarContent>
 			<NavbarContent justify="end" className="hidden sm:flex gap-4">
 				<NavbarItem className="flex ">
