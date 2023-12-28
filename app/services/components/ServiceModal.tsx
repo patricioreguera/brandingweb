@@ -22,7 +22,7 @@ export const ServiceModal = ({ service }: ServiceIterface) => {
 		<>
 			<Image
 				as={NextImage}
-				key={service.id}
+				key={service._id}
 				width={300}
 				height={300}
 				alt={service.title}
@@ -42,7 +42,7 @@ export const ServiceModal = ({ service }: ServiceIterface) => {
 							<ModalHeader className="grid grid-cols-4 gap-5 ">
 								<Image
 									as={NextImage}
-									key={service.id}
+									key={service._id}
 									isBlurred
 									width={100}
 									height={100}
