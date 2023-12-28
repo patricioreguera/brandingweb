@@ -78,25 +78,29 @@ export const Menu = () => {
 					))}
 			</NavbarContent>
 
-			<Badge
-				content={services.length > 0 ? services.length : ""}
-				shape="circle"
-				color="secondary"
-				placement="top-right"
-			>
-				<NavbarItem>
-					<Link
-						href="/services"
-						className={
-							pathname === "/budget"
-								? "text-n_violet"
-								: "text-dark hover:text-n_violet"
-						}
-					>
-						<Icon path={mdiCartOutline} size={1} />
-					</Link>
-				</NavbarItem>
-			</Badge>
+			{services.length > 0 ? (
+				<Badge
+					content={services.length > 0 ? services.length : ""}
+					shape="circle"
+					color="secondary"
+					placement="top-right"
+				>
+					<NavbarItem>
+						<Link
+							href="/budget"
+							className={
+								pathname === "/budget"
+									? "text-n_violet"
+									: "text-dark hover:text-n_violet"
+							}
+						>
+							<Icon path={mdiCartOutline} size={1} />
+						</Link>
+					</NavbarItem>
+				</Badge>
+			) : (
+				<Icon path={mdiCartOutline} size={1} />
+			)}
 
 			<NavbarMenuToggle aria-label={"Open menu"} className="sm:hidden" />
 			<NavbarContent justify="end" className="hidden sm:flex gap-4">

@@ -18,11 +18,15 @@ interface Service {
 interface MyContext {
 	services: Service[];
 	setServices: React.Dispatch<React.SetStateAction<Service[]>>;
+	clientName: string;
+	setClientName: Function;
 }
 
 const defaultValue: MyContext = {
 	services: [],
 	setServices: () => {},
+	clientName: "",
+	setClientName: () => {},
 };
 
 const MyContext = createContext<MyContext>(defaultValue);
@@ -31,7 +35,7 @@ export const AppContext = () => useContext(MyContext);
 
 export const ContextProvider = ({ children }: any) => {
 	const [services, setServices] = useState<Service[]>([]);
-
+	const [clientName, setClientName] = useState("");
 	// Cargar los datos desde el localStorage al inicializarse
 	useEffect(() => {
 		const savedServices = localStorage.getItem("services");
@@ -49,6 +53,8 @@ export const ContextProvider = ({ children }: any) => {
 	const Values = {
 		services,
 		setServices,
+		clientName,
+		setClientName,
 	};
 
 	return <MyContext.Provider value={Values}>{children}</MyContext.Provider>;

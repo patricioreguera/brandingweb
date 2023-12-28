@@ -8,7 +8,7 @@ const Projects = async () => {
 	return (
 		<>
 			<TopHeroBar title="OUR_PROJECTS" description="OUR_PROJECTS_DESCRIPTION" />
-			<div className="gap-4  flex flex-wrap px-8 justify-center -m-10">
+			<div className="gap-4  flex flex-wrap px-8 justify-center">
 				{projects?.map((project: any) => (
 					<ProjectModal project={project} key={project.id} />
 				))}

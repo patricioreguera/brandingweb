@@ -8,7 +8,7 @@ const Services = async () => {
 		<>
 			<TopHeroBar title="OUR_SERVICES" description="OUR_SERVICES_DESCRIPTION" />
 
-			<div className="gap-4  flex flex-wrap px-8 justify-center -m-10">
+			<div className="gap-4  flex flex-wrap px-8 justify-center">
 				{services?.map((service: any) => (
 					<ServiceCard service={service} key={service._id} />
 				))}

@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import { useState } from "react";
 import {
 	Modal,
 	ModalContent,
@@ -7,63 +7,58 @@ import {
 	ModalBody,
 	ModalFooter,
 	Button,
-	useDisclosure,
+	Input,
 } from "@nextui-org/react";
-import { useLanguage } from "@/app/context/LanguageProvider";
-/* import heropicture from "../../../public/images/heropicture.png"; */
-import { Image } from "@nextui-org/image";
-import NextImage from "next/image";
-interface ModalItems {
-	project: {
-		id: string;
-		title: string;
-		name: string;
-		image: string;
-		content: {
-			children: {
-				text: string;
-			}[];
-		}[];
-	};
-}
+import { AppContext } from "@/app/context/ContextProvider";
 
-export const ModalComponent = ({ project }: ModalItems) => {
-	const { isOpen, onOpen, onOpenChange } = useDisclosure();
+export const ModalComponent = ({ isOpen, onOpenChange }: any) => {
+	const { clientName, setClientName } = AppContext();
+
+	const [inputValue, setInputValue] = useState(clientName);
+
 	return (
 		<>
-			<Image
-				as={NextImage}
-				key={project.id}
-				isZoomed
-				width={340}
-				height={340}
-				alt="NextUI Fruit Image with Zoom"
-				src={project.image}
-				onClick={onOpen}
-			/>
 			<Modal
 				isOpen={isOpen}
 				onOpenChange={onOpenChange}
 				placement="auto"
 				backdrop="blur"
-				/* backdrop="opaque" */
 				size="md"
 			>
 				<ModalContent>
 					{(onClose) => (
 						<>
 							<ModalHeader className="flex flex-col gap-1 ">
-								<h1 className="font-extralight text-3xl">{project.name}</h1>
+								Envianos tu consulta via Whatsapp
 							</ModalHeader>
 							<ModalBody>
-								<p>{project.content[0].children[0].text}</p>
+								<p className="text-sm">
+									Ingresa tu nombre para personalizar el mensaje:
+								</p>
+								<Input
+									type="name"
+									label="Name"
+									onChange={(e) => setInputValue(e.target.value)}
+									isInvalid={inputValue.length === 0}
+									variant="bordered"
+								/>
+								<p className="text-sm">
+									Se enviara adjunto el presupuesto detallado
+								</p>
 							</ModalBody>
 							<ModalFooter>
-								<Button color="secondary" variant="light" onPress={onClose}>
+								<Button color="default" variant="light" onPress={onClose}>
 									Close
 								</Button>
-								<Button color="secondary" variant="solid" onPress={onClose}>
-									Action
+								<Button
+									color="success"
+									variant="bordered"
+									onClick={() => {
+										setClientName(inputValue);
+									}}
+									onPress={onClose}
+								>
+									Guardar
 								</Button>
 							</ModalFooter>
 						</>
