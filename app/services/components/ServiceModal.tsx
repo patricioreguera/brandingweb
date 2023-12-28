@@ -32,7 +32,6 @@ interface ServiceIterface {
 
 export const ServiceModal = ({ service }: ServiceIterface) => {
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
-	console.log(service);
 
 	return (
 		<>
