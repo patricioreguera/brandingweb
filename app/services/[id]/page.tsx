@@ -33,15 +33,6 @@ const Page = () => {
 		});
 	}, [pathname]);
 
-	const renderTextWithLineBreaks = (text: string) => {
-		return text?.split("<br />").map((line) => (
-			<>
-				{line}
-				<br />
-			</>
-		));
-	};
-
 	// Asegúrate de manejar el caso en que el servicio no esté definido
 	return (
 		<div className="flex flex-col justify-center items-center">
@@ -63,9 +54,7 @@ const Page = () => {
 				</h1>
 				<p className="max-w-[900px] p-5">{service?.shortdescription}</p>
 			</div>
-			<p className="max-w-[900px] p-5">
-				{service && renderTextWithLineBreaks(service?.description)}
-			</p>
+			<p className="max-w-[900px] p-5">{service?.description}</p>
 		</div>
 	);
 };
