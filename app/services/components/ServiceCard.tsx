@@ -2,8 +2,9 @@
 import { Image } from "@nextui-org/image";
 import NextImage from "next/image";
 import { ServiceIterface } from "../../interfaces/ServiceInterface";
-import { Button } from "@nextui-org/react";
+import { Button, Divider } from "@nextui-org/react";
 import { AppContext } from "@/app/context/ContextProvider";
+import confetti from "canvas-confetti";
 
 const ServiceCard = ({ service }: ServiceIterface) => {
 	const { services, setServices } = AppContext();
@@ -28,7 +29,13 @@ const ServiceCard = ({ service }: ServiceIterface) => {
 	const isDuplicate = services.some(
 		(existingService) => existingService._id === service._id
 	);
-
+	const handleConfetti = () => {
+		confetti({
+			particleCount: 150,
+			spread: 100,
+			startVelocity: 50,
+		});
+	};
 	return (
 		<div className="w-[300px] ">
 			<Image
@@ -47,8 +54,9 @@ const ServiceCard = ({ service }: ServiceIterface) => {
 						{service.description[0].children[0].text}
 					</p>
 				</div>
-				<div className="flex justify-between items-center pt-2">
-					<p className="text-lg font-bold">Price: {service.price} €</p>
+				<Divider className="my-4" />
+				<div className="flex justify-between items-center ">
+					<p className="text-sm font-bold">Price: {service.price} €</p>
 					<div className="flex gap-3">
 						{isDuplicate ? (
 							<Button
@@ -69,6 +77,7 @@ const ServiceCard = ({ service }: ServiceIterface) => {
 								variant="solid"
 								onClick={() => saveInContext(service)}
 								aria-label="add budget"
+								onPress={handleConfetti}
 							>
 								<p className="font-normal text-sm">Add Budget</p>
 							</Button>

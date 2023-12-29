@@ -1,6 +1,8 @@
 import TopHeroBar from "../components/TopHeroBar/TopHeroBar";
 import { getServices } from "@/sanity/sanity-utils";
 import ServiceCard from "./components/ServiceCard";
+import { ButtonToBudget } from "./components/ButtonToBudget";
+
 const Services = async () => {
 	const services = await getServices();
 
@@ -12,6 +14,9 @@ const Services = async () => {
 				{services?.map((service: any) => (
 					<ServiceCard service={service} key={service._id} />
 				))}
+			</div>
+			<div className="flex items-center justify-center py-10">
+				<ButtonToBudget />
 			</div>
 		</>
 	);
