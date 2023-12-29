@@ -13,11 +13,8 @@ export interface ServiceInterface {
 	url: string;
 	price: number;
 	shortdescription: string;
-	description: {
-		children: {
-			text: string;
-		}[];
-	}[];
+	description: string;
+	demo: string;
 }
 
 // Define el tipo para la respuesta de getServices
@@ -36,6 +33,15 @@ const Page = () => {
 		});
 	}, [pathname]);
 	console.log(service);
+
+	const renderTextWithLineBreaks = (text: string) => {
+		return text?.split("<br />").map((line) => (
+			<>
+				{line}
+				<br />
+			</>
+		));
+	};
 
 	// Asegúrate de manejar el caso en que el servicio no esté definido
 	return (
@@ -56,9 +62,11 @@ const Page = () => {
 				<h1 className="leading-none text-[3rem] lg:text-7xl font-semibold bg-gradient-to-r from-white  to-n_violet2 text-transparent bg-clip-text">
 					{service?.title}
 				</h1>
-				<p>{service?.shortdescription}</p>
+				<p className="max-w-[900px] p-5">{service?.shortdescription}</p>
 			</div>
-			<p>{service?.description[0].children[0].text} </p>
+			<p className="max-w-[900px] p-5">
+				{renderTextWithLineBreaks(service?.description)}
+			</p>
 		</div>
 	);
 };

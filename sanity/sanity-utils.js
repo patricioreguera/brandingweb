@@ -37,7 +37,7 @@ export async function getServices() {
 			shortdescription,
             description,
 			price,
-			demo
+			
         }`
 	);
 }

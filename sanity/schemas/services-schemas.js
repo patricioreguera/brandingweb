@@ -30,9 +30,14 @@ const services = {
 			],
 		},
 		{
+			name: "shortdescription",
+			title: "short description service",
+			type: "text", // Tipo de texto largo para la descripción
+		},
+		{
 			name: "description",
 			title: "Description",
-			type: "simpleRichText",
+			type: "text",
 			/* of: [{ type: "block" }], */
 		},
 		{
@@ -40,17 +45,6 @@ const services = {
 			title: "Price",
 			type: "number",
 			description: "the price of the project in EUR",
-		},
-		{
-			name: "shortdescription",
-			title: "short description service",
-			type: "text", // Tipo de texto largo para la descripción
-		},
-		{
-			name: "demo",
-			title: "Description",
-			type: "simpleRichText",
-			/* of: [{ type: "block" }], */
 		},
 	],
 };
