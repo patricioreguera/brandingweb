@@ -6,6 +6,8 @@ import { Button, Divider } from "@nextui-org/react";
 import { AppContext } from "@/app/context/ContextProvider";
 import confetti from "canvas-confetti";
 import Link from "next/link";
+import { mdiEyeOutline } from "@mdi/js";
+import Icon from "@mdi/react";
 
 const ServiceCard = ({ service }: ServiceInterface) => {
 	const { services, setServices } = AppContext();
@@ -83,15 +85,17 @@ const ServiceCard = ({ service }: ServiceInterface) => {
 								>
 									<p className="font-normal text-sm">Add Budget</p>
 								</Button>
-								<Button
-									/* isIconOnly */
-									size="sm"
-									color="default"
-									variant="solid"
-									aria-label="add budget"
-								>
-									<Link href={`/services/${service._id}`}>demo</Link>
-								</Button>
+								<Link href={`/services/${service._id}`}>
+									<Button
+										isIconOnly
+										size="sm"
+										color="default"
+										variant="solid"
+										aria-label="add budget"
+									>
+										<Icon path={mdiEyeOutline} size={1} />
+									</Button>
+								</Link>
 							</>
 						)}
 					</div>
