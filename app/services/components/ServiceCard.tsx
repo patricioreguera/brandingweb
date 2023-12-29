@@ -85,17 +85,17 @@ const ServiceCard = ({ service }: ServiceInterface) => {
 								>
 									<p className="font-normal text-sm">Add Budget</p>
 								</Button>
-								{/* 							<Link href={`/services/${service._id}`}>
-									<Button
-										isIconOnly
-										size="sm"
-										color="default"
-										variant="solid"
-										aria-label="add budget"
-									>
-										<Icon path={mdiEyeOutline} size={1} />
-									</Button>
-								</Link> */}
+								<Button
+									as={Link}
+									isIconOnly
+									size="sm"
+									color="default"
+									variant="solid"
+									aria-label="add budget"
+									href={`/services/${service._id}`}
+								>
+									<Icon path={mdiEyeOutline} size={1} />
+								</Button>
 							</>
 						)}
 					</div>

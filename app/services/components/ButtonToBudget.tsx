@@ -9,11 +9,13 @@ export const ButtonToBudget = () => {
 
 	return (
 		<Button
+			as={Link}
 			color="secondary"
 			variant="solid"
 			isDisabled={services.length === 0}
+			href="/budget"
 		>
-			<Link href="/budget">View budget</Link>
+			View budget
 		</Button>
 	);
 };

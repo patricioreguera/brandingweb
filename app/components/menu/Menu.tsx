@@ -63,7 +63,6 @@ export const Menu = () => {
 						<NavbarItem
 							isActive={pathname === menuitem.url}
 							key={menuitem.title}
-							
 						>
 							<Link
 								className={
