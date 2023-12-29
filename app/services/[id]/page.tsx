@@ -32,7 +32,7 @@ const Page = () => {
 			}
 		});
 	}, [pathname]);
-
+	//demo
 	// Asegúrate de manejar el caso en que el servicio no esté definido
 	return (
 		<div className="flex flex-col justify-center items-center">
