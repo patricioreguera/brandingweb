@@ -38,9 +38,7 @@ const BudgetCard = ({ service }: any) => {
 			</CardHeader>
 			<CardBody>
 				<div>
-					<p className="text-sm font-thin">
-						{service.description[0].children[0].text}
-					</p>
+					<p className="text-sm font-thin">{service.shortdescription}</p>
 					<p className="text-sm font-thin">Price: {service.price} €</p>
 				</div>
 			</CardBody>

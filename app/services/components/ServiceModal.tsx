@@ -56,7 +56,7 @@ export const ServiceModal = ({ service }: ServiceInterface) => {
 										{service.inputType}
 									</p>
 									<p className="font-light text-sm">
-										{service.description[0].children[0].text}
+										{service.shortdescription}
 									</p>
 									<p>{service.price}</p>
 								</div>
