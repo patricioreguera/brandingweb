@@ -1,6 +1,13 @@
 "use client";
 import { AppContext } from "@/app/context/ContextProvider";
-import { Avatar, Button } from "@nextui-org/react";
+import {
+	Avatar,
+	Button,
+	Card,
+	CardBody,
+	CardFooter,
+	CardHeader,
+} from "@nextui-org/react";
 
 const BudgetCard = ({ service }: any) => {
 	const { services, setServices } = AppContext();
@@ -12,20 +19,12 @@ const BudgetCard = ({ service }: any) => {
 		setServices(updatedServices);
 	};
 	return (
-		<div className="flex gap-5 items-center justify-between">
-			<div className="flex gap-5">
-				<div>
+		<Card className="w-[300px]">
+			<CardHeader className="justify-between ">
+				<div className="flex items-center gap-2">
 					<Avatar src={service.image} />
-				</div>
-				<div>
 					<h1 key={service._id}>{service.title}</h1>
-					<p className="text-sm font-thin">
-						{service.description[0].children[0].text}
-					</p>
-					<p className="text-sm font-thin">Price: {service.price} €</p>
 				</div>
-			</div>
-			<div>
 				<Button
 					isIconOnly
 					color="default"
@@ -36,9 +35,35 @@ const BudgetCard = ({ service }: any) => {
 				>
 					<p className="font-normal text-sm">X</p>
 				</Button>
-			</div>
-		</div>
+			</CardHeader>
+			<CardBody>
+				<div>
+					<p className="text-sm font-thin">
+						{service.description[0].children[0].text}
+					</p>
+					<p className="text-sm font-thin">Price: {service.price} €</p>
+				</div>
+			</CardBody>
+		</Card>
 	);
 };
 
 export default BudgetCard;
+
+/* 
+<Card shadow="sm"   >
+<CardBody className="overflow-visible p-0">
+  <Image
+	shadow="sm"
+	radius="lg"
+	width="100%"
+	alt={item.title}
+	className="w-full object-cover h-[140px]"
+	src={item.img}
+  />
+</CardBody>
+<CardFooter className="text-small justify-between">
+  <b>{item.title}</b>
+  <p className="text-default-500">{item.price}</p>
+</CardFooter>
+</Card> */

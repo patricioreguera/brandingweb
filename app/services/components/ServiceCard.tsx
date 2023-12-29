@@ -54,7 +54,7 @@ const ServiceCard = ({ service }: ServiceIterface) => {
 							<Button
 								/* isIconOnly */
 								color="default"
-								variant="flat"
+								variant="bordered"
 								onClick={() => removeFromContext(service._id)}
 								aria-label="Like"
 								size="sm"
@@ -66,7 +66,7 @@ const ServiceCard = ({ service }: ServiceIterface) => {
 								/* isIconOnly */
 								size="sm"
 								color="secondary"
-								variant="bordered"
+								variant="solid"
 								onClick={() => saveInContext(service)}
 								aria-label="add budget"
 							>

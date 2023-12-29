@@ -30,21 +30,21 @@ const Budget = () => {
 	return (
 		<>
 			<TopHeroBar
-				title="Budget"
-				description="Revisa tu presupuesto y envianos tu consulta"
+				title={`Hi! ${clientName}`}
+				description="Este es tu presupuesto"
 			/>
 			<div className="gap-4  flex flex-col justify-center items-center ">
-				<div className="flex flex-col gap-5 lg:p-20 p-5">
+				<div className="flex flex-col lg:flex-row flex-wrap gap-5 lg:p-5 p-5">
 					{services.map((service) => (
 						<BudgetCard service={service} key={service._id} />
 					))}
 				</div>
-				<div className="flex    justify-center items-center gap-10">
+				<div className="flex items-center gap-10">
 					<p>Total {totalBudget(services)} €</p>
 
 					<Button
 						color="success"
-						variant="bordered"
+						variant="solid"
 						onClick={() => whatsappSender({ services, clientName })}
 					>
 						<Icon path={mdiWhatsapp} title="Whatsapp Icon" size={1} />

@@ -29,7 +29,7 @@ export const ModalComponent = ({ isOpen, onOpenChange }: any) => {
 					{(onClose) => (
 						<>
 							<ModalHeader className="flex flex-col gap-1 ">
-								Envianos tu consulta via Whatsapp
+								Como te llamas?
 							</ModalHeader>
 							<ModalBody>
 								<p className="text-sm">
@@ -39,20 +39,14 @@ export const ModalComponent = ({ isOpen, onOpenChange }: any) => {
 									type="name"
 									label="Name"
 									onChange={(e) => setInputValue(e.target.value)}
-									isInvalid={inputValue.length === 0}
-									variant="bordered"
+									/* isInvalid={inputValue.length === 0} */
+									variant="underlined"
 								/>
-								<p className="text-sm">
-									Se enviara adjunto el presupuesto detallado
-								</p>
 							</ModalBody>
 							<ModalFooter>
-								<Button color="default" variant="light" onPress={onClose}>
-									Close
-								</Button>
 								<Button
-									color="success"
-									variant="bordered"
+									color="secondary"
+									variant="solid"
 									onClick={() => {
 										setClientName(inputValue);
 									}}
