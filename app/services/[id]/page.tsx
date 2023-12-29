@@ -32,7 +32,6 @@ const Page = () => {
 			}
 		});
 	}, [pathname]);
-	console.log(service);
 
 	const renderTextWithLineBreaks = (text: string) => {
 		return text?.split("<br />").map((line) => (
@@ -65,7 +64,7 @@ const Page = () => {
 				<p className="max-w-[900px] p-5">{service?.shortdescription}</p>
 			</div>
 			<p className="max-w-[900px] p-5">
-				{renderTextWithLineBreaks(service?.description)}
+				{service && renderTextWithLineBreaks(service?.description)}
 			</p>
 		</div>
 	);
