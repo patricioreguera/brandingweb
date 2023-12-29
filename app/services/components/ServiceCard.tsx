@@ -1,12 +1,13 @@
 "use client";
 import { Image } from "@nextui-org/image";
 import NextImage from "next/image";
-import { ServiceIterface } from "../../interfaces/ServiceInterface";
+import { ServiceInterface } from "../../interfaces/ServiceInterface";
 import { Button, Divider } from "@nextui-org/react";
 import { AppContext } from "@/app/context/ContextProvider";
 import confetti from "canvas-confetti";
+import Link from "next/link";
 
-const ServiceCard = ({ service }: ServiceIterface) => {
+const ServiceCard = ({ service }: ServiceInterface) => {
 	const { services, setServices } = AppContext();
 
 	const saveInContext = (item: any) => {
@@ -70,17 +71,28 @@ const ServiceCard = ({ service }: ServiceIterface) => {
 								<p className="font-normal text-sm">Delete Budget</p>
 							</Button>
 						) : (
-							<Button
-								/* isIconOnly */
-								size="sm"
-								color="secondary"
-								variant="solid"
-								onClick={() => saveInContext(service)}
-								aria-label="add budget"
-								onPress={handleConfetti}
-							>
-								<p className="font-normal text-sm">Add Budget</p>
-							</Button>
+							<>
+								<Button
+									/* isIconOnly */
+									size="sm"
+									color="secondary"
+									variant="solid"
+									onClick={() => saveInContext(service)}
+									aria-label="add budget"
+									onPress={handleConfetti}
+								>
+									<p className="font-normal text-sm">Add Budget</p>
+								</Button>
+								<Button
+									/* isIconOnly */
+									size="sm"
+									color="default"
+									variant="solid"
+									aria-label="add budget"
+								>
+									<Link href={`/services/${service._id}`}>demo</Link>
+								</Button>
+							</>
 						)}
 					</div>
 				</div>

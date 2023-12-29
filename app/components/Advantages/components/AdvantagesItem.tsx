@@ -21,7 +21,7 @@ const AdvantagesItem = ({
 			<h1 className="text-2xl font-bold bg-gradient-to-r from-white  to-bodycolor text-transparent bg-clip-text text-center">
 				{title}
 			</h1>
-			<p className="font-thin lg:text-lg text-default-500 text-sm max-w-xs text-center tracking-wide">
+			<p className=" lg:text-lg text-default-500 text-sm max-w-xs text-center tracking-wide">
 				{description_short}
 			</p>
 			<PopOver title={title} desciption_large={desciption_large} />

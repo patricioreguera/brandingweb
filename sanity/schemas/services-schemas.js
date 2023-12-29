@@ -41,6 +41,11 @@ const services = {
 			type: "number",
 			description: "the price of the project in EUR",
 		},
+		{
+			name: "shortdescription",
+			title: "short description service",
+			type: "text", // Tipo de texto largo para la descripción
+		},
 	],
 };
 

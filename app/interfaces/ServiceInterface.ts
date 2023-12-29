@@ -1,4 +1,4 @@
-export interface ServiceIterface {
+export interface ServiceInterface {
 	service: {
 		_id: string;
 		title: string;

@@ -13,9 +13,9 @@ import {
 import { Image } from "@nextui-org/image";
 import NextImage from "next/image";
 import Link from "next/link";
-import { ServiceIterface } from "@/app/interfaces/ServiceInterface";
+import { ServiceInterface } from "@/app/interfaces/ServiceInterface";
 
-export const ServiceModal = ({ service }: ServiceIterface) => {
+export const ServiceModal = ({ service }: ServiceInterface) => {
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
 	return (
