@@ -10,9 +10,11 @@ import {
 	Input,
 } from "@nextui-org/react";
 import { AppContext } from "@/app/context/ContextProvider";
+import { useLanguage } from "@/app/context/LanguageProvider";
 
 export const ModalComponent = ({ isOpen, onOpenChange }: any) => {
 	const { clientName, setClientName } = AppContext();
+	const { translate } = useLanguage();
 
 	const [inputValue, setInputValue] = useState(clientName);
 
@@ -29,12 +31,10 @@ export const ModalComponent = ({ isOpen, onOpenChange }: any) => {
 					{(onClose) => (
 						<>
 							<ModalHeader className="flex flex-col gap-1 ">
-								Como te llamas?
+								{translate?.SAVE_TITLE}
 							</ModalHeader>
 							<ModalBody>
-								<p className="text-sm">
-									Ingresa tu nombre para personalizar el mensaje:
-								</p>
+								<p className="text-sm">{translate?.SAVE_MESAGE}</p>
 								<Input
 									type="name"
 									label="Name"
@@ -52,7 +52,7 @@ export const ModalComponent = ({ isOpen, onOpenChange }: any) => {
 									}}
 									onPress={onClose}
 								>
-									Guardar
+									{translate?.SAVE}
 								</Button>
 							</ModalFooter>
 						</>

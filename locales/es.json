@@ -16,7 +16,13 @@
     "OUR_PROJECTS": "Nuestros Proyectos",
     "OUR_PROJECTS_DESCRIPTION": "Estos son algunos de nuestros ultimos proyectos",
     "OUR_SERVICES": "Nuestros Servicios",
-    "OUR_SERVICES_DESCRIPTION":"Estos son algunos de nuestros servicios"
+    "OUR_SERVICES_DESCRIPTION":"Estos son algunos de nuestros servicios",
+    "HI": "Hola!",
+    "HI_DESCRIPTION": "Este es tu presupuesto",
+    "SEND": "Enviar",
+    "SAVE_TITLE": "Como te llamas?",
+    "SAVE_MESAGE": "Ingresa tu nombre para personalizar el mensaje:",
+    "SAVE": "Guardar"
 
 }
   
