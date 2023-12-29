@@ -85,7 +85,7 @@ const ServiceCard = ({ service }: ServiceInterface) => {
 								>
 									<p className="font-normal text-sm">Add Budget</p>
 								</Button>
-								<Link href={`/services/${service._id}`}>
+								{/* 							<Link href={`/services/${service._id}`}>
 									<Button
 										isIconOnly
 										size="sm"
@@ -95,7 +95,7 @@ const ServiceCard = ({ service }: ServiceInterface) => {
 									>
 										<Icon path={mdiEyeOutline} size={1} />
 									</Button>
-								</Link>
+								</Link> */}
 							</>
 						)}
 					</div>
