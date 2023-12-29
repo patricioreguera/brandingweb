@@ -32,8 +32,8 @@ const services = {
 		{
 			name: "description",
 			title: "Description",
-			type: "array",
-			of: [{ type: "block" }],
+			type: "simpleRichText",
+			/* of: [{ type: "block" }], */
 		},
 		{
 			name: "price",
@@ -45,6 +45,12 @@ const services = {
 			name: "shortdescription",
 			title: "short description service",
 			type: "text", // Tipo de texto largo para la descripción
+		},
+		{
+			name: "demo",
+			title: "Description",
+			type: "simpleRichText",
+			/* of: [{ type: "block" }], */
 		},
 	],
 };

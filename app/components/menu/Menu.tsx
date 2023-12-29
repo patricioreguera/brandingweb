@@ -10,8 +10,9 @@ import {
 	NavbarMenu,
 	NavbarMenuItem,
 	Badge,
+	Link,
 } from "@nextui-org/react";
-import Link from "next/link";
+import Linkm from "next/link";
 import { usePathname } from "next/navigation";
 import { LanguageSwitcher } from "../LanguageButton/LanguageSwitcher";
 import { AppContext } from "@/app/context/ContextProvider";
@@ -44,8 +45,8 @@ export const Menu = () => {
 		>
 			<NavbarContent>
 				<NavbarBrand>
-					<Link href="/">
-						<h1 className="flex align-middle justify-center items-center">
+					<Link href="/" as={Linkm}>
+						<h1 className="flex align-middle justify-center items-center text-dark">
 							<span className="font-black text-lg text-inherit bg-gradient-to-r from-n_violet  to-n_violet2 text-transparent bg-clip-text">
 								BW.
 							</span>
@@ -71,6 +72,7 @@ export const Menu = () => {
 										: "text-dark hover:text-n_violet"
 								}
 								href={menuitem.url}
+								as={Linkm}
 							>
 								{menuitem.title}
 							</Link>
@@ -93,6 +95,7 @@ export const Menu = () => {
 									? "text-n_violet"
 									: "text-dark hover:text-n_violet"
 							}
+							as={Linkm}
 						>
 							<Icon path={mdiCartOutline} size={1} />
 						</Link>
@@ -115,8 +118,14 @@ export const Menu = () => {
 					{menuItems.map((item, index) => (
 						<NavbarMenuItem key={`${item}-${index}`}>
 							<Link
-								className="w-full hover:text-n_violet font-medium "
+								className={
+									pathname === item.url
+										? "text-n_violet"
+										: "text-dark hover:text-n_violet"
+								}
 								href={item?.url}
+								size="lg"
+								as={Linkm}
 							>
 								{item.title}
 							</Link>

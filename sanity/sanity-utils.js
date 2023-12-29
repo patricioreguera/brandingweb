@@ -34,8 +34,10 @@ export async function getServices() {
             title,
             "slug":slug.current,
             "image":image.asset->url,
+			shortdescription,
             description,
-			price
+			price,
+			demo
         }`
 	);
 }

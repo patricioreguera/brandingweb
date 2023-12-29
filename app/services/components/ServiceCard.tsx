@@ -53,9 +53,7 @@ const ServiceCard = ({ service }: ServiceInterface) => {
 			<div className="p-3">
 				<div className="flex flex-col ">
 					<h6>{service.title}</h6>
-					<p className="text-sm font-thin">
-						{service.description[0].children[0].text}
-					</p>
+					<p className="text-sm font-thin">{service?.shortdescription}</p>
 				</div>
 				<Divider className="my-4" />
 				<div className="flex justify-between items-center ">

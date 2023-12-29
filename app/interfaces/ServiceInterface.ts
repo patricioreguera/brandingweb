@@ -11,5 +11,6 @@ export interface ServiceInterface {
 				text: string;
 			}[];
 		}[];
+		shortdescription:string
 	};
 }

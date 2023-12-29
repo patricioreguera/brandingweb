@@ -35,6 +35,7 @@ const Page = () => {
 			}
 		});
 	}, [pathname]);
+	console.log(service);
 
 	// Asegúrate de manejar el caso en que el servicio no esté definido
 	return (
@@ -55,10 +56,9 @@ const Page = () => {
 				<h1 className="leading-none text-[3rem] lg:text-7xl font-semibold bg-gradient-to-r from-white  to-n_violet2 text-transparent bg-clip-text">
 					{service?.title}
 				</h1>
-				<p>{service?.description[0].children[0].text} </p>
+				<p>{service?.shortdescription}</p>
 			</div>
-
-			{/* <p>{service?.shortdescription}</p> */}
+			<p>{service?.description[0].children[0].text} </p>
 		</div>
 	);
 };
