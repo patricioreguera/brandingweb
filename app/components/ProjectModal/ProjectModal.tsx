@@ -23,7 +23,7 @@ interface ProjectIterface {
 
 export const ProjectModal = ({ project }: ProjectIterface) => {
 	return (
-		<div>
+		<div className="max-w-[300px]">
 			<Image
 				as={NextImage}
 				key={project.id}
@@ -31,6 +31,7 @@ export const ProjectModal = ({ project }: ProjectIterface) => {
 				height={300}
 				alt={project.name}
 				src={project.image}
+				draggable={false}
 			/>
 			<div className="flex gap-2 items-center justify-between p-2">
 				<h6 className="font-normal text-sm">{project.name}</h6>

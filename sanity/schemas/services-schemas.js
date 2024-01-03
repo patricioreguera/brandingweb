@@ -37,9 +37,10 @@ const services = {
 		{
 			name: "description",
 			title: "Description",
-			type: "text",
-			/* of: [{ type: "block" }], */
+			type: "array",
+			of: [{ type: "block" }],
 		},
+
 		{
 			name: "price",
 			title: "Price",
