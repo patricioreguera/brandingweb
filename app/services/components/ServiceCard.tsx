@@ -8,37 +8,12 @@ import confetti from "canvas-confetti";
 import Link from "next/link";
 import { mdiEyeOutline } from "@mdi/js";
 import Icon from "@mdi/react";
+import { useSaveService } from "@/app/hooks/useSaveService";
 
 const ServiceCard = ({ service }: ServiceInterface) => {
-	const { services, setServices } = AppContext();
+	const { saveInContext, removeFromContext, handleConfetti, isDuplicate } =
+		useSaveService({ service });
 
-	const saveInContext = (item: any) => {
-		const isDuplicate = services.some(
-			(existingService) => existingService._id === item._id
-		);
-
-		if (!isDuplicate) {
-			const updatedServices = [...services, item];
-			setServices(updatedServices);
-		}
-	};
-
-	const removeFromContext = (serviceId: string) => {
-		const updatedServices = services.filter(
-			(service) => service._id !== serviceId
-		);
-		setServices(updatedServices);
-	};
-	const isDuplicate = services.some(
-		(existingService) => existingService._id === service._id
-	);
-	const handleConfetti = () => {
-		confetti({
-			particleCount: 150,
-			spread: 100,
-			startVelocity: 50,
-		});
-	};
 	return (
 		<div className="w-[300px] ">
 			<Image
@@ -59,7 +34,7 @@ const ServiceCard = ({ service }: ServiceInterface) => {
 				<div className="flex justify-between items-center ">
 					<p className="text-sm font-bold">Price: {service.price} €</p>
 					<div className="flex gap-3">
-						{isDuplicate ? (
+						{isDuplicate(service) ? (
 							<>
 								<Button
 									/* isIconOnly */

@@ -43,7 +43,7 @@ const Benefits = () => {
 				<>
 					<Spacer y={2} />
 					<div
-						className="flex justify-start items-center gap-5"
+						className="flex justify-start items-center gap-5 text-white"
 						key={benefit.title}
 					>
 						<Icon
