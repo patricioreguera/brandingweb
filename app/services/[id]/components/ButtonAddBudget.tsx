@@ -11,9 +11,9 @@ const ButtonAddBudget = ({ service }: any) => {
 		<div>
 			{!isDuplicate(service) ? (
 				<Button
-					className="w-full"
-					color="secondary"
+					className="w-full "
 					variant="solid"
+					color="secondary"
 					onClick={() => saveInContext(service)}
 					aria-label="add budget"
 					onPress={handleConfetti}

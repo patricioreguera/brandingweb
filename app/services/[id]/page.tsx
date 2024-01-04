@@ -7,11 +7,9 @@ import Link from "next/link";
 import Service from "./components/Service";
 import Benefits from "./components/Benefits";
 import NextImage from "next/image";
-import works from "../../../public/images/works.jpeg";
-import WorkProcess from "./components/WorkProcess";
-import { useSaveService } from "@/app/hooks/useSaveService";
 import ButtonAddBudget from "./components/ButtonAddBudget";
 import { ButtonToBudget } from "../components/ButtonToBudget";
+import ServiceCard from "../components/ServiceCard";
 // Ajusta el tipo ServiceInterface para que coincida con la estructura de tus servicios
 export interface ServiceInterface {
 	_id: string;
@@ -27,9 +25,9 @@ export interface ServiceInterface {
 
 // Define el tipo para la respuesta de getServices
 type ServicesResponse = ServiceInterface[];
-
 const Page = () => {
 	const [service, setService] = useState<ServiceInterface | null>(null);
+	const [allServices, setAllServices] = useState([]);
 	const pathname = usePathname();
 
 	useEffect(() => {
@@ -37,6 +35,7 @@ const Page = () => {
 			const foundService = services.find((item) => pathname.includes(item._id));
 			if (foundService) {
 				setService(foundService);
+				setAllServices(services);
 			}
 		});
 	}, [pathname]);
@@ -52,30 +51,51 @@ const Page = () => {
 				<div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-10 max-w-5xl px-6 ">
 					<div className="col-span-2 ">
 						<Service service={service} />
+						<Spacer y={16} />
+						<h1>Otras sugerencias</h1>
+						<Spacer y={4} />
+
+						<div className="flex flex-wrap gap-5 justify-center items-start">
+							{allServices
+								?.filter((item: any) => item._id !== service?._id)
+								?.map((service: any) => (
+									<ServiceCard service={service} key={service._id} />
+								))
+								?.slice(1, 3)}
+						</div>
+						<Spacer y={10} />
 					</div>
-					<div className="bg-gradient-to-tl from-darkgray via-darkgray to-pureBlack rounded-lg flex flex-col p-5 lg:gap-5 h-fit">
+					<div className="bg-gradient-to-tl from-darkgray via-darkgray to-pureBlack rounded-lg flex flex-col p-5 lg:gap-3 h-fit">
 						<h1 className="text-n_violet text-xl font-bold text-center">
 							Beneficios Webs
 						</h1>
+						<Spacer y={4} />
+
 						<Divider />
 						<Benefits />
 						<Spacer y={4} />
 						<ButtonAddBudget service={service} />
+						<Spacer y={4} />
 						<ButtonToBudget />
 						<Spacer y={4} />
+						<h1 className="text-white text-sm text-center">Ultimos Trabajos</h1>
+						<Spacer y={4} />
+						<Divider />
 						<div className="flex justify-center items-center">
-							<Image
-								as={NextImage}
-								src={"/images/works.jpeg"}
-								alt="Producto Destacado"
-								className="rounded-xl"
-								draggable={false}
-								width={300}
-								height={300}
-								isZoomed
-							/>
+							<Link href="/projects">
+								<Image
+									as={NextImage}
+									src={"/images/works.jpeg"}
+									alt="Producto Destacado"
+									className="rounded-xl"
+									draggable={false}
+									width={300}
+									height={300}
+									isZoomed
+								/>
+							</Link>
 						</div>
-
+						<Spacer y={4} />
 						<Button
 							as={Link}
 							className="w-full"

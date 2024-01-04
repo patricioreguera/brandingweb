@@ -38,7 +38,7 @@ const ServiceCard = ({ service }: ServiceInterface) => {
 							<>
 								<Button
 									/* isIconOnly */
-									color="default"
+									color="secondary"
 									variant="bordered"
 									onClick={() => removeFromContext(service._id)}
 									aria-label="Like"
