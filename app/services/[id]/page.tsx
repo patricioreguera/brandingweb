@@ -27,7 +27,8 @@ export interface ServiceInterface {
 type ServicesResponse = ServiceInterface[];
 const Page = () => {
 	const [service, setService] = useState<ServiceInterface | null>(null);
-	const [allServices, setAllServices] = useState([]);
+	const [allServices, setAllServices] = useState<ServiceInterface[]>([]);
+
 	const pathname = usePathname();
 
 	useEffect(() => {
