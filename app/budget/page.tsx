@@ -1,19 +1,16 @@
 "use client";
-import { useEffect } from "react";
 import { AppContext } from "../context/ContextProvider";
 import BudgetCard from "./components/BudgetCard";
-import { Button, useDisclosure } from "@nextui-org/react";
-import { ModalComponent } from "../components/Modal/ModalComponent";
+import { Button } from "@nextui-org/react";
 import { whatsappSender } from "../utils/whatsappSender";
 import Icon from "@mdi/react";
 import { mdiWhatsapp } from "@mdi/js";
 import { useLanguage } from "../context/LanguageProvider";
 
 const Budget = () => {
-	const { services, clientName } = AppContext();
+	const { services } = AppContext();
 	const { translate } = useLanguage();
 
-	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 	const totalBudget = (services: any) => {
 		let total = 0;
 		for (let i = 0; i < services.length; i++) {
@@ -22,17 +19,11 @@ const Budget = () => {
 		return total;
 	};
 
-	useEffect(() => {
-		if (!clientName) {
-			onOpen();
-		}
-	}, []);
-
 	return (
 		<>
 			<div className="gap-3 p-20 flex flex-col justify-center items-center bg-hero-pattern bg-no-repeat bg-cover bg-center">
 				<h1 className="leading-none text-[3rem] lg:text-7xl font-semibold bg-gradient-to-r from-white  to-n_violet2 text-transparent bg-clip-text">
-					{`${translate?.HI || "Hello"} ${clientName}`}
+					{`${translate?.HI || "Hello"}`}
 				</h1>
 				<p>{translate?.HI_DESCRIPTION} </p>
 			</div>
@@ -49,12 +40,11 @@ const Budget = () => {
 					<Button
 						color="success"
 						variant="solid"
-						onClick={() => whatsappSender({ services, clientName })}
+						onClick={() => whatsappSender({ services })}
 					>
 						<Icon path={mdiWhatsapp} title="Whatsapp Icon" size={1} />
 						{translate?.SEND}
 					</Button>
-					<ModalComponent isOpen={isOpen} onOpenChange={onOpenChange} />
 				</div>
 			</div>
 		</>

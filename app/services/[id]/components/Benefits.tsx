@@ -1,37 +1,40 @@
 import React from "react";
 import Icon from "@mdi/react";
-import { mdiSpeedometer } from "@mdi/js";
+import {
+	mdiWeb,
+	mdiImageMultipleOutline,
+	mdiImageCheckOutline,
+	mdiGoogleAds,
+	mdiSchoolOutline,
+	mdiClockTimeEightOutline,
+} from "@mdi/js";
 import { Spacer } from "@nextui-org/react";
 
 const Benefits = () => {
 	const benefitsList = [
 		{
 			title: "Configuración de Dominio y Hosting",
-			icon: mdiSpeedometer,
+			icon: mdiWeb,
 		},
 		{
 			title: "Optimización de Imágenes y Banners",
-			icon: mdiSpeedometer,
+			icon: mdiImageMultipleOutline,
 		},
 		{
 			title: "Interfaz Personalizada",
-			icon: mdiSpeedometer,
-		},
-		{
-			title: "Plugins Profesionales",
-			icon: mdiSpeedometer,
+			icon: mdiImageCheckOutline,
 		},
 		{
 			title: "Configuración Google Analytics",
-			icon: mdiSpeedometer,
+			icon: mdiGoogleAds,
 		},
 		{
 			title: "Capacitación Online",
-			icon: mdiSpeedometer,
+			icon: mdiSchoolOutline,
 		},
 		{
-			title: "Lista en 30 días",
-			icon: mdiSpeedometer,
+			title: "Rapida entrega",
+			icon: mdiClockTimeEightOutline,
 		},
 	];
 	return (

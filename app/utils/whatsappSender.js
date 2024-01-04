@@ -1,8 +1,6 @@
-export function whatsappSender({ services, clientName }) {
+export function whatsappSender({ services }) {
 	let total = 0;
-	let mensaje = `Hola soy ${
-		clientName || "un nuevo cliente"
-	}, me gustaría consultar por los siguientes servicios: `;
+	let mensaje = `Hola, me gustaría consultar por los siguientes servicios: `;
 	const numeroTelefono = +34605373537;
 	// Construir el mensaje y calcular el total
 	for (let i = 0; i < services.length; i++) {

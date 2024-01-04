@@ -4,13 +4,13 @@ import React from "react";
 /* import heropicture from "../../../public/images/heropicture.png"; */
 import { Image } from "@nextui-org/image";
 import NextImage from "next/image";
-
+import defaultimg from "../../../public/images/defaultimg.jpg";
 interface ProjectIterface {
 	project: {
 		id: string;
 		title: string;
 		name: string;
-		image: string;
+		image: any;
 		inputType: string;
 		url: string;
 		content: {
@@ -30,7 +30,7 @@ export const ProjectModal = ({ project }: ProjectIterface) => {
 				width={300}
 				height={300}
 				alt={project.name}
-				src={project.image}
+				src={project.image || defaultimg}
 				draggable={false}
 			/>
 			<div className="flex gap-2 items-center justify-between p-2">

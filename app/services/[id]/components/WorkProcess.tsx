@@ -17,7 +17,7 @@ const WorkProcess = () => {
 			description:
 				"Ya con todo el contenido listo y optimizado comienza la etapa del desarrollo y la programación del sitio web.                 La primera etapa de desarrollo se centra en el diseño de la web proceso durante el cual me encargo de la estética del mismo. Para luego pasar a la segunda etapa de desarrollo y programacion de la web.",
 		},
-		/* 	{
+		{
 			title: "Ajustes",
 			description:
 				"Una vez ya terminada la etapa de desarrollo realizaremos una reunión en la cual podrás ver tu sitio web en funcionamiento y podremos hacer los ajustes finales antes de su lanzamiento.",
@@ -26,7 +26,7 @@ const WorkProcess = () => {
 			title: "Entrega",
 			description:
 				"Llego el dia! Una vez finalizada tu web tendremos una videollamada en la que tendrás una capacitación para poder acceder a tu panel de administrador del sitio. Esta misma quedara guardada en video para que puedas consultarla cuando quieras. También recibirás un documento pdf en el cual tendrás toda la información necesaria para acceder a tu negocio online.",
-		}, */
+		},
 	];
 
 	return (

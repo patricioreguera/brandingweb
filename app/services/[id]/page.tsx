@@ -2,11 +2,11 @@
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { getServices } from "@/sanity/sanity-utils";
-import { Button, Spacer, Divider } from "@nextui-org/react";
+import { Button, Spacer, Divider, Image } from "@nextui-org/react";
 import Link from "next/link";
 import Service from "./components/Service";
 import Benefits from "./components/Benefits";
-import Image from "next/image";
+import NextImage from "next/image";
 import works from "../../../public/images/works.jpeg";
 import WorkProcess from "./components/WorkProcess";
 // Ajusta el tipo ServiceInterface para que coincida con la estructura de tus servicios
@@ -57,8 +57,8 @@ const Page = () => {
 					{service?.title}
 				</h1>
 			</div>
-			<div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-10 max-w-5xl p-5 ">
-				<div className="col-span-2 p-5">
+			<div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-10 max-w-5xl  ">
+				<div className="col-span-2 ">
 					<Service service={service} />
 				</div>
 				<div className="bg-gradient-to-tl from-darkgray via-darkgray to-pureBlack rounded-lg flex flex-col p-5 lg:gap-5 h-fit">
@@ -71,10 +71,14 @@ const Page = () => {
 					<Button>Add Budget</Button>
 					<Spacer y={4} />
 					<Image
-						src={works}
+						as={NextImage}
+						src={"/images/works.jpeg"}
 						alt="Producto Destacado"
 						className="rounded-xl"
 						draggable={false}
+						width={300}
+						height={300}
+						isZoomed
 					/>
 					<Spacer y={4} />
 				</div>
