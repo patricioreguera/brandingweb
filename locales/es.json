@@ -22,7 +22,8 @@
     "SEND": "Enviar",
     "SAVE_TITLE": "Como te llamas?",
     "SAVE_MESAGE": "Ingresa tu nombre para personalizar el mensaje:",
-    "SAVE": "Guardar"
-
+    "SAVE": "Guardar",
+    "ADD_BUDGET": "Presupuestar",
+    "DELETE_BUDGET": "Quitar"
 }
   

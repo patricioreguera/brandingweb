@@ -22,7 +22,9 @@
     "SEND": "Send",
     "SAVE_TITLE": "What is your name?",
     "SAVE_MESAGE": "Enter your name to personalize the message:",
-    "SAVE": "Save"
+    "SAVE": "Save",
+    "ADD_BUDGET": "Add budget",
+    "DELETE_BUDGET": "Delete budget"
 
 }
   

@@ -6,6 +6,7 @@ import { whatsappSender } from "../utils/whatsappSender";
 import Icon from "@mdi/react";
 import { mdiWhatsapp } from "@mdi/js";
 import { useLanguage } from "../context/LanguageProvider";
+import { redirect } from "next/navigation";
 
 const Budget = () => {
 	const { services } = AppContext();
@@ -18,6 +19,10 @@ const Budget = () => {
 		}
 		return total;
 	};
+
+	if (services.length === 0) {
+		redirect("/services");
+	}
 
 	return (
 		<>

@@ -1,9 +1,10 @@
 import { useSaveService } from "@/app/hooks/useSaveService";
 import React from "react";
-import { ServiceInterface } from "../page";
 import { Button } from "@nextui-org/react";
+import { useLanguage } from "@/app/context/LanguageProvider";
 
 const ButtonAddBudget = ({ service }: any) => {
+	const { translate } = useLanguage();
 	const { saveInContext, removeFromContext, handleConfetti, isDuplicate } =
 		useSaveService({ service });
 
@@ -18,7 +19,7 @@ const ButtonAddBudget = ({ service }: any) => {
 					aria-label="add budget"
 					onPress={handleConfetti}
 				>
-					Add Budget
+					{translate.ADD_BUDGET}
 				</Button>
 			) : (
 				<Button
@@ -28,7 +29,7 @@ const ButtonAddBudget = ({ service }: any) => {
 					onClick={() => removeFromContext(service._id)}
 					aria-label="Like"
 				>
-					Delete Budget
+					{translate.DELETE_BUDGET}
 				</Button>
 			)}
 		</div>

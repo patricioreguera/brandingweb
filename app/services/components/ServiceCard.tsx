@@ -9,8 +9,10 @@ import Link from "next/link";
 import { mdiEyeOutline } from "@mdi/js";
 import Icon from "@mdi/react";
 import { useSaveService } from "@/app/hooks/useSaveService";
+import { useLanguage } from "@/app/context/LanguageProvider";
 
 const ServiceCard = ({ service }: ServiceInterface) => {
+	const { translate } = useLanguage();
 	const { saveInContext, removeFromContext, handleConfetti, isDuplicate } =
 		useSaveService({ service });
 
@@ -41,10 +43,10 @@ const ServiceCard = ({ service }: ServiceInterface) => {
 									color="secondary"
 									variant="bordered"
 									onClick={() => removeFromContext(service._id)}
-									aria-label="Like"
+									aria-label="Delete budget"
 									size="sm"
 								>
-									<p className="font-normal text-sm">Delete Budget</p>
+									{translate.DELETE_BUDGET}
 								</Button>
 								<Button
 									as={Link}
@@ -52,7 +54,7 @@ const ServiceCard = ({ service }: ServiceInterface) => {
 									size="sm"
 									color="default"
 									variant="solid"
-									aria-label="add budget"
+									aria-label="view budget"
 									href={`/services/${service._id}`}
 								>
 									<Icon path={mdiEyeOutline} size={1} />
@@ -69,7 +71,7 @@ const ServiceCard = ({ service }: ServiceInterface) => {
 									aria-label="add budget"
 									onPress={handleConfetti}
 								>
-									<p className="font-normal text-sm">Add Budget</p>
+									{translate.ADD_BUDGET}
 								</Button>
 								<Button
 									as={Link}
