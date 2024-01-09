@@ -27,7 +27,6 @@ const ButtonAddBudget = ({ service }: any) => {
 					variant="bordered"
 					onClick={() => removeFromContext(service._id)}
 					aria-label="Like"
-					onPress={handleConfetti}
 				>
 					Delete Budget
 				</Button>
