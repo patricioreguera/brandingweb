@@ -1,11 +1,13 @@
 "use client";
 
 import { AppContext } from "@/app/context/ContextProvider";
+import { useLanguage } from "@/app/context/LanguageProvider";
 import { Button } from "@nextui-org/react";
 import Link from "next/link";
 
 export const ButtonToBudget = () => {
 	const { services } = AppContext();
+	const { translate } = useLanguage();
 
 	return (
 		<Button
@@ -15,7 +17,7 @@ export const ButtonToBudget = () => {
 			isDisabled={services.length === 0}
 			href="/budget"
 		>
-			View budget
+			{translate.VIEW_BUDGET}
 		</Button>
 	);
 };

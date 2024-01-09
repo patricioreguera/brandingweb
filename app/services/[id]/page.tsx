@@ -10,6 +10,7 @@ import NextImage from "next/image";
 import ButtonAddBudget from "./components/ButtonAddBudget";
 import { ButtonToBudget } from "../components/ButtonToBudget";
 import ServiceCard from "../components/ServiceCard";
+import { useLanguage } from "@/app/context/LanguageProvider";
 // Ajusta el tipo ServiceInterface para que coincida con la estructura de tus servicios
 export interface ServiceInterface {
 	_id: string;
@@ -26,6 +27,7 @@ export interface ServiceInterface {
 // Define el tipo para la respuesta de getServices
 type ServicesResponse = ServiceInterface[];
 const Page = () => {
+	const { translate } = useLanguage();
 	const [service, setService] = useState<ServiceInterface | null>(null);
 	const [allServices, setAllServices] = useState<ServiceInterface[]>([]);
 
@@ -105,7 +107,7 @@ const Page = () => {
 							aria-label="Like"
 							href="/services"
 						>
-							volver a servicios
+							{translate.BACK_SERVICES}
 						</Button>
 					</div>
 				</div>

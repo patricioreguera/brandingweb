@@ -24,7 +24,9 @@
     "SAVE_MESAGE": "Enter your name to personalize the message:",
     "SAVE": "Save",
     "ADD_BUDGET": "Add budget",
-    "DELETE_BUDGET": "Delete budget"
+    "DELETE_BUDGET": "Delete budget",
+    "VIEW_BUDGET": "View Budget",
+    "BACK_SERVICES": "Back to services"
 
 }
   
