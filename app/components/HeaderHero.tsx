@@ -30,7 +30,12 @@ const HeaderHero = () => {
 					</Button>
 				</div>
 				<div className="col-span-1 flex justify-center">
-					<Image src={heropicture} alt="Producto Destacado" className="" />
+					<Image
+						src={heropicture}
+						alt="Producto Destacado"
+						className=""
+						draggable="false"
+					/>
 				</div>
 			</header>
 		</div>

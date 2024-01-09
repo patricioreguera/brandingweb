@@ -20,7 +20,6 @@ interface ProjectIterface {
 		}[];
 	};
 }
-
 export const ProjectModal = ({ project }: ProjectIterface) => {
 	return (
 		<div className="max-w-[300px]">
@@ -30,8 +29,10 @@ export const ProjectModal = ({ project }: ProjectIterface) => {
 				width={300}
 				height={300}
 				alt={project.name}
-				src={project.image || defaultimg}
+				src={`${project.image}?fit=crop&w=1000&h=1000`}
 				draggable={false}
+				loading="eager"
+				isBlurred
 			/>
 			<div className="flex gap-2 items-center justify-between p-2">
 				<h6 className="font-normal text-sm">{project.name}</h6>

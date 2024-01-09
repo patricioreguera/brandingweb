@@ -22,7 +22,7 @@ const ServiceCard = ({ service }: ServiceInterface) => {
 				width={300}
 				height={300}
 				alt={service.title}
-				src={service.image}
+				src={`${service.image}?fit=crop&w=1000&h=1000`}
 				draggable="false"
 			/>
 			<div className="p-3">
