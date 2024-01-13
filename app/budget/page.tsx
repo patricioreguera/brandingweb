@@ -39,7 +39,7 @@ const Budget = () => {
 						<BudgetCard service={service} key={service._id} />
 					))}
 				</div>
-				<div className="flex items-center gap-5">
+				<div className="flex flex-col lg:flex-row items-center gap-5 ">
 					<p>Total {totalBudget(services)} €</p>
 					<Button color="secondary" variant="solid" as={Link} href="/services">
 						<Icon path={mdiPlusBox} title="Whatsapp Icon" size={1} />
