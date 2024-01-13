@@ -10,6 +10,7 @@ import {
 	CardFooter,
 } from "@nextui-org/react";
 import NextImage from "next/image";
+import { motion } from "framer-motion";
 
 const BudgetCard = ({ service }: any) => {
 	const { services, setServices } = AppContext();
@@ -22,42 +23,63 @@ const BudgetCard = ({ service }: any) => {
 	};
 	return (
 		<>
-			<Card
-				isFooterBlurred
-				className="w-[250px]  h-[250px]col-span-12 sm:col-span-7 "
+			<motion.div
+				animate={{
+					scale: [0, 1],
+					rotate: [30, 0],
+				}}
+				transition={{
+					type: "spring",
+					stiffness: 260,
+					damping: 20,
+					duration: 10,
+				}}
+				/* initial={{ scale: 0 }}
+				animate={{ rotate: 0, scale: 1 }}
+				transition={{
+					type: "spring",
+					stiffness: 260,
+					damping: 20,
+					duration: 10,
+				}} */
 			>
-				<CardHeader className="absolute z-10 top-1 flex-col items-end">
-					<Button
-						isIconOnly
-						color="default"
-						variant="shadow"
-						onClick={() => removeFromContext(service._id)}
-						aria-label="Like"
-						size="sm"
-					>
-						<p className="font-normal text-sm">X</p>
-					</Button>
-				</CardHeader>
-				<NextImage
-					/* removeWrapper */
-					alt="Relaxing app background"
-					className="z-0 w-full h-full object-cover"
-					src={service.image}
-					draggable={false}
-					width={1000}
-					height={1000}
-				/>
-				<CardFooter className="absolute bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
-					<div className="flex flex-grow gap-2 items-center">
-						<div className="flex flex-col">
-							<p className="text-tiny text-white">{service.title}</p>
-							<p className="text-tiny text-white/60">
-								{service.shortdescription.slice(0, 40)}...
-							</p>
+				<Card
+					isFooterBlurred
+					className="w-[250px]  h-[250px]col-span-12 sm:col-span-7 "
+				>
+					<CardHeader className="absolute z-10 top-1 flex-col items-end">
+						<Button
+							isIconOnly
+							color="default"
+							variant="shadow"
+							onClick={() => removeFromContext(service._id)}
+							aria-label="Like"
+							size="sm"
+						>
+							<p className="font-normal text-sm">X</p>
+						</Button>
+					</CardHeader>
+					<NextImage
+						/* removeWrapper */
+						alt="Relaxing app background"
+						className="z-0 w-full h-full object-cover"
+						src={service.image}
+						draggable={false}
+						width={1000}
+						height={1000}
+					/>
+					<CardFooter className="absolute bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
+						<div className="flex flex-grow gap-2 items-center">
+							<div className="flex flex-col">
+								<p className="text-tiny text-white">{service.title}</p>
+								<p className="text-tiny text-white/60">
+									{service.shortdescription.slice(0, 40)}...
+								</p>
+							</div>
 						</div>
-					</div>
-				</CardFooter>
-			</Card>
+					</CardFooter>
+				</Card>
+			</motion.div>
 			{/* 	<Card className="w-[300px]">
 				<CardHeader className="justify-between bg-black  ">
 					<Image

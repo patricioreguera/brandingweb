@@ -8,6 +8,7 @@ import { mdiEyeOutline } from "@mdi/js";
 import Icon from "@mdi/react";
 import { useSaveService } from "@/app/hooks/useSaveService";
 import { useLanguage } from "@/app/context/LanguageProvider";
+import { motion } from "framer-motion";
 
 const ServiceCard = ({ service }: ServiceInterface) => {
 	const { translate } = useLanguage();
@@ -15,7 +16,21 @@ const ServiceCard = ({ service }: ServiceInterface) => {
 		useSaveService({ service });
 
 	return (
-		<div className="w-[300px] ">
+		<motion.div
+			className="w-[300px]"
+			animate={{
+				scale: [1.1, 1],
+				rotate: [0, 0],
+				opacity: [0, 1],
+				top: [0, 1],
+			}}
+			transition={{
+				type: "spring",
+				stiffness: 260,
+				damping: 20,
+				duration: 10,
+			}}
+		>
 			<Link href={`/services/${service._id}`}>
 				<NextImage
 					key={service._id}
@@ -97,7 +112,7 @@ const ServiceCard = ({ service }: ServiceInterface) => {
 					</div>
 				</div>
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 
