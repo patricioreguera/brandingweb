@@ -22,7 +22,10 @@ const BudgetCard = ({ service }: any) => {
 	};
 	return (
 		<>
-			<Card isFooterBlurred className=" h-[250px] col-span-12 sm:col-span-7 ">
+			<Card
+				isFooterBlurred
+				className="w-[250px]  h-[250px]col-span-12 sm:col-span-7 "
+			>
 				<CardHeader className="absolute z-10 top-1 flex-col items-end">
 					<Button
 						isIconOnly
