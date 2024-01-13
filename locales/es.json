@@ -26,7 +26,8 @@
     "ADD_BUDGET": "Presupuestar",
     "DELETE_BUDGET": "Quitar",
     "VIEW_BUDGET": "Ver Presupuesto",
-    "BACK_SERVICES": "Volver a servicios"
+    "BACK_SERVICES": "Volver a servicios",
+    "MORE_SERVICES": "Ver mas servicios"
 
 }
   

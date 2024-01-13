@@ -14,7 +14,6 @@ const api = {
 			)
 				.then((res) => res.text())
 				.then((text) => {
-					console.log(text);
 					return text
 						.split("\n")
 						.slice(1)

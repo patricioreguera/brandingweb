@@ -13,7 +13,6 @@ import {
 /* https://docs.google.com/forms/d/e/1FAIpQLSeKNl44QwktXsBTEH3c7ncIKvuIUiOOPwrQkRyFvVimxbp8oQ/viewform?usp=pp_url&entry.395308679=asdas&entry.44535904=asdasd&entry.2144738560=asdasd */
 const page = async () => {
 	const demo = await api.demo.list();
-	console.log(demo);
 	return (
 		<div>
 			<Table>

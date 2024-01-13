@@ -4,10 +4,10 @@ import BudgetCard from "./components/BudgetCard";
 import { Button } from "@nextui-org/react";
 import { whatsappSender } from "../utils/whatsappSender";
 import Icon from "@mdi/react";
-import { mdiWhatsapp } from "@mdi/js";
+import { mdiWhatsapp, mdiPlusBox } from "@mdi/js";
 import { useLanguage } from "../context/LanguageProvider";
 import { redirect } from "next/navigation";
-
+import Link from "next/link";
 const Budget = () => {
 	const { services } = AppContext();
 	const { translate } = useLanguage();
@@ -39,9 +39,12 @@ const Budget = () => {
 						<BudgetCard service={service} key={service._id} />
 					))}
 				</div>
-				<div className="flex items-center gap-10">
+				<div className="flex items-center gap-5">
 					<p>Total {totalBudget(services)} €</p>
-
+					<Button color="secondary" variant="solid" as={Link} href="/services">
+						<Icon path={mdiPlusBox} title="Whatsapp Icon" size={1} />
+						{translate.MORE_SERVICES}
+					</Button>
 					<Button
 						color="success"
 						variant="solid"

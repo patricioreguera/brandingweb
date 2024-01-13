@@ -3,8 +3,6 @@ import { Image } from "@nextui-org/image";
 import NextImage from "next/image";
 import { ServiceInterface } from "../../interfaces/ServiceInterface";
 import { Button, Divider } from "@nextui-org/react";
-import { AppContext } from "@/app/context/ContextProvider";
-import confetti from "canvas-confetti";
 import Link from "next/link";
 import { mdiEyeOutline } from "@mdi/js";
 import Icon from "@mdi/react";
@@ -18,15 +16,25 @@ const ServiceCard = ({ service }: ServiceInterface) => {
 
 	return (
 		<div className="w-[300px] ">
-			<Image
-				as={NextImage}
+			<Link href={`/services/${service._id}`}>
+				<NextImage
+					key={service._id}
+					width={500}
+					height={500}
+					alt={service.title}
+					src={`${service.image}?fit=crop&w=1000&h=1000`}
+					draggable="false"
+					className="rounded-xl"
+				/>
+			</Link>
+			{/* <Image
 				key={service._id}
 				width={300}
 				height={300}
 				alt={service.title}
 				src={`${service.image}?fit=crop&w=1000&h=1000`}
 				draggable="false"
-			/>
+			/> */}
 			<div className="p-3">
 				<div className="flex flex-col ">
 					<h6>{service.title}</h6>

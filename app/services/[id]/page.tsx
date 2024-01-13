@@ -86,15 +86,13 @@ const Page = () => {
 						<Divider />
 						<div className="flex justify-center items-center">
 							<Link href="/projects">
-								<Image
-									as={NextImage}
+								<NextImage
 									src={"/images/works.jpeg"}
 									alt="Producto Destacado"
 									className="rounded-xl"
 									draggable={false}
 									width={300}
 									height={300}
-									isZoomed
 								/>
 							</Link>
 						</div>
