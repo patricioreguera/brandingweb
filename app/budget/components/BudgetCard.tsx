@@ -34,14 +34,6 @@ const BudgetCard = ({ service }: any) => {
 					damping: 20,
 					duration: 10,
 				}}
-				/* initial={{ scale: 0 }}
-				animate={{ rotate: 0, scale: 1 }}
-				transition={{
-					type: "spring",
-					stiffness: 260,
-					damping: 20,
-					duration: 10,
-				}} */
 			>
 				<Card
 					isFooterBlurred
