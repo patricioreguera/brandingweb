@@ -42,7 +42,7 @@ export const Menu = () => {
 		<Navbar
 			isBlurred /* onMenuOpenChange={() => setIsMenuOpen(!isMenuOpen)} */
 			isBordered
-			className="p-0"
+			className="p-0 z-50"
 		>
 			<NavbarContent>
 				<NavbarBrand>

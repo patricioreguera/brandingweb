@@ -1,10 +1,6 @@
-"use client";
-
 import React from "react";
 /* import heropicture from "../../../public/images/heropicture.png"; */
-import { Image } from "@nextui-org/image";
 import NextImage from "next/image";
-import defaultimg from "../../../public/images/defaultimg.jpg";
 interface ProjectIterface {
 	project: {
 		id: string;
