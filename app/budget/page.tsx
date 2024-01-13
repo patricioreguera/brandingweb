@@ -26,15 +26,17 @@ const Budget = () => {
 
 	return (
 		<>
-			<div className="gap-3 p-20 flex flex-col justify-center items-center bg-hero-pattern bg-no-repeat bg-cover bg-center">
-				<h1 className="leading-none text-[3rem] lg:text-7xl font-semibold bg-gradient-to-r from-white  to-n_violet2 text-transparent bg-clip-text">
-					{`${translate?.HI || "Hello"}`}
-				</h1>
-				<p>{translate?.HI_DESCRIPTION} </p>
+			<div className=" bg-promo-pattern bg-no-repeat bg-cover bg-center">
+				<div className="gap-3 p-20 flex flex-col justify-center items-center bg-gradient-to-t from-pureBlack  to-pureBlack/0">
+					<h1 className="leading-none text-[3rem] lg:text-7xl font-semibold bg-gradient-to-r from-white  to-n_violet2 text-transparent bg-clip-text">
+						{`${translate?.HI || "Hello"}`}
+					</h1>
+					<p>{translate?.HI_DESCRIPTION} </p>
+				</div>
 			</div>
 
-			<div className="gap-4  flex flex-col justify-center items-center ">
-				<div className="flex flex-col lg:flex-row flex-wrap gap-5 lg:p-5 p-5">
+			<div className="gap-4 flex flex-col justify-center items-center">
+				<div className="flex flex-col lg:flex-row flex-wrap gap-5 lg:p-5 p-5 justify-center items-center">
 					{services.map((service) => (
 						<BudgetCard service={service} key={service._id} />
 					))}

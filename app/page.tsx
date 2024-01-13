@@ -2,6 +2,7 @@ import Promotions from "./components/Promotions";
 import HeaderHero from "./components/HeaderHero";
 import Advantages from "./components/Advantages/Advantages";
 import Services from "./services/page";
+import { Navegator } from "./components/Navegator";
 
 const Home = () => {
 	return (
@@ -10,7 +11,6 @@ const Home = () => {
 				<HeaderHero />
 				<Advantages />
 				<Services />
-				{/* <Promotions /> */}
 			</div>
 		</>
 	);

@@ -45,10 +45,12 @@ const Page = () => {
 
 	return (
 		<div className="flex flex-col justify-center items-center">
-			<div className="gap-3 p-10 flex flex-col justify-center items-center bg-hero-pattern bg-no-repeat bg-cover bg-center w-full ">
-				<h1 className=" leading-normal text-[3rem] lg:text-7xl font-semibold bg-gradient-to-r from-white  to-n_violet2 text-transparent bg-clip-text">
-					{service?.title}
-				</h1>
+			<div className="bg-promo-pattern bg-no-repeat bg-cover bg-center w-full">
+				<div className="gap-3 p-20 flex flex-col justify-center items-center bg-gradient-to-t from-pureBlack  to-pureBlack/0">
+					<h1 className=" leading-normal text-[3rem] lg:text-7xl font-semibold bg-gradient-to-r from-white  to-n_violet2 text-transparent bg-clip-text">
+						{service?.title}
+					</h1>
+				</div>
 			</div>
 			<div className="bg-white w-full text-pureBlack flex justify-center py-5">
 				<div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-10 max-w-5xl px-6 ">
